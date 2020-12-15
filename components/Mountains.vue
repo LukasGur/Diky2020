@@ -6,10 +6,11 @@
     An error occurred :(
   </p>
   <div v-else>
-    <h1>Nuxt Mountains</h1>
-    <ul>
-      <li v-for="mountain in mountains" :key="mountain.title">
-        {{ mountain.title }}
+    <h1>Nuxt thanks</h1>
+    <ul v-for="mountain in mountains.data.results" :key="mountain.id" style="margin-bottom: 1.5rem">
+      <li v-for="(value, key) in mountain" :key="key">
+        {{ key }}
+        {{ value }}
       </li>
     </ul>
     <button @click="$fetch">
@@ -22,7 +23,7 @@
 export default {
   async fetch () {
     this.mountains = await fetch(
-      'https://api.nuxtjs.dev/mountains'
+      'https://diky2020.noltio.com/thanks/'
     ).then(res => res.json())
   },
   data () {

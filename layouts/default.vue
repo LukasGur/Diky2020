@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="web">
     <MainHeader />
     <Nuxt />
   </div>
@@ -10,7 +10,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: $font-primary
+}
+
+#web {
+  color: $black;
 }
 
 .container {

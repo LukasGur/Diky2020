@@ -1,1 +1,30 @@
-$orange: #FFF8EE;
+$orange: #E66D45;
+$orange-light: #FFF0E8;
+$orange-light-2: #FFEBE0;
+$yellow-light: #FFF8EE;
+$black: #141412;
+$white: white;
+
+$font-primary: Rubik, sans-serif;;
+$font-primary-italic: Rubik-Lightitalic;
+$font-primary-bold: Rubik-Medium;
+$font-second: Newzald;
+
+@mixin font($font-family, $font-file, $weight, $style) {
+  @font-face {
+    font-family: $font-family;
+    src: url($font-file+'.eot');
+    src: url($font-file+'.eot?#iefix') format('embedded-opentype'),
+         url($font-file+'.woff') format('woff'),
+         url($font-file+'.woff2') format('woff2'),
+         url($font-file+'.ttf') format('truetype'),
+         url($font-file+'.svg#'+$font-family) format('svg');
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+@include font('Newzald', '/fonts/Newzald/Newzald-Bold', normal, normal);
+@include font('Rubik', '/fonts/Rubik/Rubik-Lightitalic', normal, italic);
+@include font('Rubik', '/fonts/Rubik/Rubik-Light', normal, normal);
+@include font('Rubik', '/fonts/Rubik/Rubik-Medium', bold, normal);
