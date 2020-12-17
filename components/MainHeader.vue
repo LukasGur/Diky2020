@@ -25,12 +25,10 @@
       </div>
     </div>
     <div class="container wrapper">
-      <div class="header__info">
-        Zbývá <span>5</span> dnů <span>23</span> hodin a&nbsp;<span>15</span> minut
-      </div>
+      <date-countdown :count-down-date="newYearDate" class="header__info" />
       <div class="header__info header__info--right">
-        <div>Sdíleno <span>15 429 poděkování</span></div>
-        <div>Darováno <span>1 534 300 Kč</span></div>
+        <div>Sdíleno <span>{{ totalThanks }} poděkování</span></div>
+        <div>Darováno <span>{{ totalDonated }} Kč</span></div>
       </div>
     </div>
   </header>
@@ -38,9 +36,19 @@
 
 <script>
 export default {
+  async fetch () {
+    await fetch('https://diky2020.noltio.com/welcome').then(res => res.json()).then((res) => {
+      this.totalThanks = res.data.totalThanks.toLocaleString('cs-CZ')
+      this.totalDonated = res.data.donated.toLocaleString('cs-CZ')
+      this.newYearDate = new Date(res.data.eventEnd).getTime()
+    })
+  },
   data () {
     return {
-      mainTitle: null
+      mainTitle: null,
+      totalThanks: '---',
+      totalDonated: '---',
+      newYearDate: null
     }
   },
   watch: {
