@@ -38,8 +38,8 @@
 export default {
   async fetch () {
     await fetch('https://diky2020.noltio.com/welcome').then(res => res.json()).then((res) => {
-      this.totalThanks = res.data.totalThanks.toLocaleString('cs-CZ')
-      this.totalDonated = res.data.donated.toLocaleString('cs-CZ')
+      this.totalThanks = new Intl.NumberFormat('cs-CZ').format(res.data.totalThanks)
+      this.totalDonated = new Intl.NumberFormat('cs-CZ').format(res.data.donated)
       this.newYearDate = new Date(res.data.eventEnd).getTime()
     })
   },
@@ -48,7 +48,7 @@ export default {
       mainTitle: null,
       totalThanks: '---',
       totalDonated: '---',
-      newYearDate: null
+      newYearDate: 0
     }
   },
   watch: {
