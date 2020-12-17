@@ -1,6 +1,9 @@
 <template>
-  <div>
+  <div v-if="days > 0">
     Zbývá <span>{{ days }}</span> dnů <span>{{ hours }}</span> hodin a&nbsp;<span>{{ minutes }}</span> minut
+  </div>
+  <div v-else>
+    Zbývá <span>{{ hours }}</span> hodin <span>{{ minutes }}</span> minut a&nbsp;<span>{{ seconds }}</span> sekund
   </div>
 </template>
 
@@ -48,7 +51,7 @@ export default {
           clearInterval(this.myInterval)
           this.expired = true
         }
-      }, 15000)
+      }, 1000)
     }
   }
 }
