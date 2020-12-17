@@ -34,7 +34,7 @@
 }
 
 .banner__wrapper {
-  margin-right: 10rem;
+  margin-right: 10.5rem;
   display: flex;
   justify-content: space-between;
 }
