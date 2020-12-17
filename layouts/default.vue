@@ -19,8 +19,19 @@
 
 .container {
   margin: 0 auto;
-  max-width: 1000px;
+  max-width: 1055px;
   width: 85%;
   padding-bottom: 5rem;
+}
+
+.icon {
+  position: relative;
+  top: 3px;
+  left: -3px;
+  width: 1.3em;
+  height: 1.3em;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 </style>

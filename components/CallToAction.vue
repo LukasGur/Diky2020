@@ -15,7 +15,7 @@
 .banner {
   background-color: $orange-light;
   border-radius: 8px;
-  padding: 1.5rem 2.5rem;
+  padding: 1.5rem 3rem;
   position: relative;
 
   &::after {

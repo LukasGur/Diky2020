@@ -9,6 +9,8 @@ export default {
     previewFiles (event) {
       if (event.target.files[0]) {
         this.fileInputText = event.target.files[0].name
+      } else {
+        this.fileInputText = 'Nahrát obrázek'
       }
     }
   }
@@ -17,7 +19,7 @@ export default {
 
 <template>
   <label class="file-input">
-    <i class="icon--paperclip" />
+    <i class="icon icon--paperclip" />
     {{ fileInputText }}
     <input accept="image/*," type="file" style="display: none;" name="image" @change="previewFiles">
   </label>
@@ -42,14 +44,6 @@ export default {
 }
 
 .icon--paperclip {
-  position: relative;
-  top: 3px;
-  left: -3px;
-  width: 1.3em;
-  height: 1.3em;
-  display: inline-block;
-  background-size: contain;
-  background-repeat: no-repeat;
   background-image: url('/paperclip.svg');
 }
 </style>

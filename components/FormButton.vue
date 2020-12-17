@@ -1,5 +1,12 @@
 <template>
-  <component :is="elementType" :to="to" class="button" :class="[type ? 'button--'+type : '']">
+  <component
+    :is="elementType"
+    :to="to"
+    class="button"
+    :class="[type ? 'button--'+type : '']"
+    :target="blank ? '_blank' : ''"
+    :href="href"
+  >
     <slot />
   </component>
 </template>
@@ -16,11 +23,27 @@ export default {
       type: String,
       required: false,
       default: null
+    },
+    href: {
+      type: String,
+      required: false,
+      default: null
+    },
+    blank: {
+      type: Boolean,
+      required: false,
+      default: null
     }
   },
   computed: {
     elementType () {
-      return this.to ? 'router-link' : 'button'
+      if (this.to) {
+        return 'router-link'
+      } else if (this.href) {
+        return 'a'
+      } else {
+        return 'button'
+      }
     }
   }
 }
@@ -31,7 +54,7 @@ export default {
   border: none;
   background-color: $orange;
   color: $white;
-  padding: 1rem 2rem;
+  padding: 1rem 2.8rem;
   border-radius: 4px;
   text-decoration: none;
   display: inline-block;
