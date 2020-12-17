@@ -38,6 +38,7 @@ export default {
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 2.4px;
+  font-size: 1rem;
 }
 
 .button--primary-outline {

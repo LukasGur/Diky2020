@@ -28,13 +28,13 @@ export default {
   },
   head () {
     return {
-      title: this.title,
+      title: 'Poděkuj a šiř pozitivní náladu | Díky 2020',
       meta: [
         // hid is used as unique identifier. Do not use `vmid` for it as it will not work
         {
           hid: 'description',
           name: 'description',
-          content: 'My custom description'
+          content: 'Projekt vznikl na podporu samoživitelek. Šiř pozitivní náladu a podpoř samoživitelky v nouzi!'
         }
       ]
     }
