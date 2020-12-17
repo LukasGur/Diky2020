@@ -68,6 +68,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.container {
+  padding-bottom: 0;
+}
+
 .header {
   background: transparent linear-gradient(180deg, #FFF9EF 0%, #FFF9EF 29%, #fff9ef23 100%) 0% 0% no-repeat padding-box;
   padding-top: 4rem;

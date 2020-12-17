@@ -1,7 +1,7 @@
 <template>
-  <button class="button" :class="{'button--orange': type === 'orange'}">
+  <component :is="elementType" :to="to" class="button" :class="{'button--orange': type === 'orange'}">
     <slot />
-  </button>
+  </component>
 </template>
 
 <script>
@@ -11,6 +11,16 @@ export default {
       type: String,
       required: false,
       default: null
+    },
+    to: {
+      type: String,
+      required: false,
+      default: null
+    }
+  },
+  computed: {
+    elementType () {
+      return this.to ? 'router-link' : 'button'
     }
   }
 }
@@ -26,6 +36,8 @@ export default {
     font-weight: bold;
     cursor: pointer;
     padding: 4px;
+    text-decoration: none;
+    text-transform: uppercase;
 
     &--orange {
       color: $orange

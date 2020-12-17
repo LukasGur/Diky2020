@@ -1,3 +1,3 @@
 ---
-title: "Sbírka"
+title: "Podpoř sbírku samoživitelkám"
 ---

@@ -1,5 +1,5 @@
 <template>
-  <component :is="elementType" :to="to" class="button" :class="[buttonType ? 'button--'+buttonType : '']">
+  <component :is="elementType" :to="to" class="button" :class="[type ? 'button--'+type : '']">
     <slot />
   </component>
 </template>
@@ -7,7 +7,7 @@
 <script>
 export default {
   props: {
-    buttonType: {
+    type: {
       type: String,
       required: false,
       default: null
@@ -39,6 +39,7 @@ export default {
   text-transform: uppercase;
   letter-spacing: 2.4px;
   font-size: 12px;
+  font-weight: bold;
 }
 
 .button--primary-outline {

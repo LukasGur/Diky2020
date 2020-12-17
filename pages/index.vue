@@ -56,7 +56,7 @@ export default {
         <span class="thanks__end-text">Žádná další poděkování.</span>
         <call-to-action />
       </div>
-      <form-button v-else button-type="primary-outline" @click.native="$fetch">
+      <form-button v-else type="primary-outline" @click.native="$fetch">
         Další poděkování
       </form-button>
     </div>
@@ -80,7 +80,6 @@ export default {
 .thanks__end {
   text-align: center;
   padding-top: 2rem;
-  padding-bottom: 5rem;
 }
 
 .thanks__end-text {
