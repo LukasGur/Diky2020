@@ -1,9 +1,9 @@
 <script>
 export default {
-  async asyncData ({ $content, store }) {
+  async asyncData ({ $content, store, params }) {
     const content = await $content('sbirka').only('title').fetch()
     store.commit('setNewMainTitle', content.title)
-    return { content }
+    return { thanksId: params.slug }
   },
   data () {
     return {
@@ -34,41 +34,15 @@ export default {
         <i class="icon icon--tick" />
         Poděkování odesláno
       </span>
-      <div class="">
+      <div class="confirmation-link">
         Najdeš jej zde:
-        <form-button type="primary-outline" :href="fullUrl + '/R5XYQ'" :blank="true">
-          <!-- {{ url }}/R5XYQ -->
-          Diky2020.cz/R5XYQ
+        <form-button class="thanks-link" type="primary-outline" :href="`${fullUrl}/${thanksId}`" :blank="true">
+          diky2020.cz/IXyAlvLI
+          <!-- {{ url }}/{{ thanksId }} -->
         </form-button>
       </div>
     </div>
-    <div class="links__wrapper">
-      <div class="links__left">
-        <img class="links__image-left" src="/hp-banner-illustration-left.png" alt="pán starající se o seniorku">
-        <div class="link__box">
-          <h3 class="links__title">
-            Rád podpořím seniory.
-          </h3>
-          <form-button href="https://www.donio.cz/" :blank="true">
-            Podpořit
-          </form-button>
-        </div>
-      </div>
-      <div class="links__right">
-        <div class="link__box">
-          <h3 class="links__title">
-            Rád podpořím samoživitelky.
-          </h3>
-          <form-button href="https://www.donio.cz/" :blank="true" type="primary-outline">
-            Podpořit
-          </form-button>
-        </div>
-        <img class="links__image-right" src="/samozivitelka.svg" alt="matka s dítětem">
-      </div>
-    </div>
-    <p class="signature">
-      Pro zaslání finančního příspěvku budete přesměrování na web Donio.cz
-    </p>
+    <donio-links />
   </div>
 </template>
 
@@ -84,6 +58,10 @@ export default {
   display: flex;
   width: 100%;
   margin-bottom: 1.5rem;
+
+  @include xl {
+    flex-direction: column;
+  }
 }
 
 .confirmation-box {
@@ -96,6 +74,14 @@ export default {
   border-radius: 8px 8px 0px 0px;
   letter-spacing: 3.2px;
   margin-top: 1.2rem;
+
+  @include md {
+    padding: 3rem 1.5rem;
+  }
+
+  @include xs {
+    padding: 3rem 1rem;
+  }
 }
 
 .confirmation-msg {
@@ -109,33 +95,71 @@ export default {
   width: 100%;
   padding: 2rem;
   position: relative;
+
+  @include xl {
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  @include md {
+    text-align: left;
+
+    &:first-child {
+      text-align: right;
+    }
+  }
+
+  @include sm {
+    &:first-child {
+      text-align: left;
+    }
+  }
 }
 
 .links__left {
   background-color: $orange-light;
   border-bottom-left-radius: 8px;
+
+  @include xl {
+    border-bottom-left-radius: 0;
+  }
 }
 
 .links__right {
   background-color: $orange;
   color: $white;
   border-bottom-right-radius: 8px;
+
+  @include xl {
+    border-bottom-left-radius: 8px;
+  }
 }
 
 .link__box {
   text-align: right;
   display: inline-block;
 
+  @include xl {
+    text-align: left;
+  }
+
   &:last-child {
     margin-left: 8rem;
+
+    @include xl {
+      margin-left: 17rem;
+    }
+
+    @include md {
+      margin-left: 0;
+    }
   }
 }
 
 .links__image-right {
   position: absolute;
-  right: 12px;
+  right: 1rem;
   bottom: 30px;
-  // width: 130px;
   height: 181px;
   z-index: 0;
 }
@@ -146,6 +170,13 @@ export default {
   bottom: 30px;
   width: 92px;
   height: 181px;
+}
+
+.links__image-right,
+.links__image-left {
+  @include sm {
+    display: none;
+  }
 }
 
 .links__title {
@@ -161,9 +192,16 @@ export default {
 
 .signature {
   font-size: 12px;
+  text-align: center;
 }
 
 .icon--tick {
   background-image: url('/checkbox.svg');
+}
+
+.thanks-link {
+  @include md {
+    margin-top: 0.8rem;
+  }
 }
 </style>

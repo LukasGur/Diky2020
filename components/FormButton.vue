@@ -54,7 +54,7 @@ export default {
   border: none;
   background-color: $orange;
   color: $white;
-  padding: 1rem 2.8rem;
+  padding: 16px 44px;
   border-radius: 4px;
   text-decoration: none;
   display: inline-block;
@@ -63,11 +63,21 @@ export default {
   letter-spacing: 2.4px;
   font-size: 12px;
   font-weight: bold;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: $orange-dark;
+  }
 }
 
 .button--primary-outline {
   color: $orange;
   background-color: $white;
-  border: 1px solid $orange
+  border: 1px solid $orange;
+  padding: 17px 45px;
+
+  &:hover {
+    background-color: $orange-light-2;
+  }
 }
 </style>

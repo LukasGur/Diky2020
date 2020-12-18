@@ -15,33 +15,18 @@ export default {
     }
   },
   fetchDelay: 0,
-  fetchOnServer: false,
-  async asyncData ({ $content, store, ssrContext }) {
+  async asyncData ({ $content, store }) {
     const content = await $content('index').only('title').fetch()
     store.commit('setNewMainTitle', content.title)
-    return { content }
   },
   data () {
     return {
       title: null,
       thanksArray: [],
       error: null,
-      apiBaseUrl: 'https://diky2020.noltio.com',
+      apiBaseUrl: 'https://api.diky2020.cz',
       apiGetThanks: '/thanks/',
       lastThanks: null
-    }
-  },
-  head () {
-    return {
-      title: 'Poděkuj a šiř pozitivní náladu | Díky 2020',
-      meta: [
-        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'Projekt vznikl na podporu samoživitelek. Šiř pozitivní náladu a podpoř samoživitelky v nouzi!'
-        }
-      ]
     }
   }
 }
@@ -83,6 +68,10 @@ export default {
 .thanks__item {
   flex-basis: 48.5%;
   margin-bottom: 4rem;
+
+  @include lg {
+    flex-basis: 100%;
+  }
 }
 
 .thanks__end {

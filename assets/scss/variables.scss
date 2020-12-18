@@ -1,4 +1,5 @@
 $orange: #E66D45;
+$orange-dark: #ae3d17;
 $orange-light: #FFF0E8;
 $orange-light-2: #FFEBE0;
 $yellow-light: #FFF8EE;
@@ -30,3 +31,38 @@ $font-second: Newzald;
 @include font('Rubik', '/fonts/Rubik/Rubik-Lightitalic', normal, italic);
 @include font('Rubik', '/fonts/Rubik/Rubik-Light', normal, normal);
 @include font('Rubik', '/fonts/Rubik/Rubik-Medium', bold, normal);
+
+// Extra small devices
+@mixin xs {
+  @media (max-width: 370px) {
+      @content;
+  }
+}
+
+// Small devices
+@mixin sm {
+  @media (max-width: 576px) {
+      @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (max-width: 768px) {
+      @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (max-width: 992px) {
+      @content;
+  }
+}
+
+// Extra large devices
+@mixin xl {
+  @media (max-width: 1200px) {
+      @content;
+  }
+}

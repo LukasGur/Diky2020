@@ -41,6 +41,11 @@ export default {
   width: 100%;
   text-align: center;
   font-weight: bold;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: $orange-light-2;
+  }
 }
 
 .icon--paperclip {

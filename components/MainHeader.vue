@@ -1,45 +1,8 @@
-<template>
-  <header class="header">
-    <div class="header__main">
-      <div class="container wrapper">
-        <nuxt-link to="/">
-          <div class="header__logo" />
-        </nuxt-link>
-
-        <div class="header__main--right">
-          <h1 class="header__title">
-            {{ mainTitle }}
-          </h1>
-          <nav>
-            <nuxt-link class="header__link" to="/podekovat">
-              Napsat poděkování
-            </nuxt-link>
-            <nuxt-link class="header__link" to="/sbirka">
-              Sbírka
-            </nuxt-link>
-            <nuxt-link class="header__link" to="/o-projektu">
-              O projektu
-            </nuxt-link>
-          </nav>
-        </div>
-      </div>
-    </div>
-    <error-msg v-if="error" :error="error" />
-    <div class="container wrapper">
-      <date-countdown :count-down-date="newYearDate" class="header__info" />
-      <div class="header__info header__info--right">
-        <div>Sdíleno <span>{{ totalThanks }} poděkování</span></div>
-        <div>Darováno <span>{{ totalDonated }} Kč</span></div>
-      </div>
-    </div>
-  </header>
-</template>
-
 <script>
 export default {
   async fetch () {
     try {
-      await fetch('https://diky2020.noltio.com/welcome').then(res => res.json()).then((res) => {
+      await fetch('https://api.diky2020.cz/welcome').then(res => res.json()).then((res) => {
         this.totalThanks = new Intl.NumberFormat('cs-CZ').format(res.data.totalThanks)
         this.totalDonated = new Intl.NumberFormat('cs-CZ').format(res.data.donated)
         this.newYearDate = new Date(res.data.eventEnd).getTime()
@@ -74,6 +37,43 @@ export default {
 }
 </script>
 
+<template>
+  <header class="header">
+    <div class="header__main">
+      <div class="container wrapper wrapper-top">
+        <nuxt-link to="/">
+          <div class="header__logo" />
+        </nuxt-link>
+
+        <div class="header__right">
+          <h1 class="header__title">
+            {{ mainTitle }}
+          </h1>
+          <nav class="header__nav">
+            <nuxt-link class="header__link" to="/podekovat">
+              Napsat poděkování
+            </nuxt-link>
+            <nuxt-link class="header__link" to="/sbirka">
+              Sbírka
+            </nuxt-link>
+            <nuxt-link class="header__link" to="/o-projektu">
+              O&nbsp;projektu
+            </nuxt-link>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <error-msg v-if="error" :error="error" />
+    <div class="container wrapper wrapper-bottom">
+      <date-countdown :count-down-date="newYearDate" class="header__info" />
+      <div class="header__info header__info--right">
+        <div>Sdíleno <span>{{ totalThanks }} poděkování</span></div>
+        <div>Darováno <span>{{ totalDonated }} Kč</span></div>
+      </div>
+    </div>
+  </header>
+</template>
+
 <style lang="scss" scoped>
 .container {
   padding-bottom: 0;
@@ -87,11 +87,16 @@ export default {
 }
 
 .header__main {
-  padding-bottom: 5rem;
+  padding-bottom: 6rem;
 
-  &--right {
-    text-align: right;
+  @include lg {
+    padding-bottom: 4rem;
   }
+}
+
+.header__right {
+  text-align: right;
+  position: relative;
 }
 
 .header__logo {
@@ -101,6 +106,12 @@ export default {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  margin-right: 0.5rem;
+
+  @include sm {
+    width: 100px;
+    height: 56.5px;
+  }
 }
 
 .wrapper {
@@ -112,13 +123,34 @@ export default {
   }
 }
 
+.wrapper-bottom {
+  @include lg {
+    flex-direction: column;
+  }
+}
+
+.header__nav {
+  position: absolute;
+  width: 100vw;
+  right: 0;
+}
+
 .header__link {
   color: $black;
   text-decoration: none;
   margin-left: 2rem;
+  display: inline-block;
+
+  &:hover {
+    text-shadow: -0.06ex 0 $black, 0.06ex 0 $black;
+  }
+
+  @include xs {
+    margin-left: 0.8rem;
+  }
 
   &.nuxt-link-active {
-    font-weight: bold;
+    text-shadow: -0.06ex 0 $black, 0.06ex 0 $black;
   }
 }
 
@@ -126,6 +158,26 @@ export default {
   margin-bottom: 23px;
   font-size: 48px;
   font-family: $font-second;
+  margin-left: auto;
+
+  @include lg {
+    font-size: 40px;
+  }
+
+  @include md {
+    font-size: 48px;
+    max-width: 366px;
+  }
+
+  @include sm {
+    font-size: 30px;
+    max-width: 250px;
+  }
+
+  @include xs {
+    font-size: 24px;
+    max-width: 200px;
+  }
 }
 
 .header__info {
@@ -133,6 +185,17 @@ export default {
   letter-spacing: 4px;
   font-size: 1.25rem;
   font-weight: bold;
+  line-height: 1.4em;
+
+  @include sm {
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+  }
+
+  @include xs {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+  }
 
   span {
     color: $orange;
@@ -140,6 +203,10 @@ export default {
 
   &--right {
     text-align: right;
+
+    @include lg {
+      text-align: inherit;
+    }
   }
 }
 

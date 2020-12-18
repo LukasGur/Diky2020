@@ -46,6 +46,10 @@ export default {
     width: 100%;
     border: 1px solid $gray;
     border-radius: 4px;
+
+    &:focus {
+      background-color: $yellow-light;
+    }
   }
 
   .input::placeholder {

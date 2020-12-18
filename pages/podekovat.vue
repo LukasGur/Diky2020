@@ -25,7 +25,6 @@ export default {
   async asyncData ({ $content, store }) {
     const content = await $content('podekovat').only('title').fetch()
     store.commit('setNewMainTitle', content.title)
-    return { content }
   },
   data () {
     return {
@@ -52,10 +51,21 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @include sm {
+      padding: 2rem;
+    }
+
+    @include xs {
+      padding: 0;
+      border: none;
+      box-shadow: none;
+    }
   }
 
   .form__line {
     margin-bottom: 1.8rem;
+
     &:last-child {
       margin-bottom: 0;
     }
@@ -66,22 +76,51 @@ export default {
     justify-content: space-between;
     align-items: flex-end;
 
+    @include lg {
+      flex-direction: column;
+    }
+
     > * {
       flex-basis: 30%;
+
+      @include lg {
+        flex-basis: 100%;
+        margin-bottom: 1.8rem;
+
+        &:last-child {
+          margin-bottom: 0rem;
+        }
+      }
     }
   }
 
   .form__footer {
     text-align: right;
 
-    > * {
-      width: 30%;
+    @include md {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      text-align: center;
     }
   }
 
   .form__footer-item {
     width: 30%;
     margin-right: 5%;
+
+    @include lg {
+      width: 50%;
+    }
+
+    @include md {
+      width: 100%;
+      margin-bottom: 1.8rem;
+
+      &:first-child {
+        margin-bottom: 0;
+      }
+    }
 
     &:last-child {
       margin-right: 0;

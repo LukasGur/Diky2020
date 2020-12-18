@@ -1,0 +1,180 @@
+<template>
+  <div class="wrapper">
+    <div class="links__wrapper">
+      <div class="links__left">
+        <img class="links__image-left" src="/hp-banner-illustration-left.png" alt="pán starající se o seniorku">
+        <div class="link__box link__box--left">
+          <h3 class="links__title">
+            Rád podpořím seniory.
+          </h3>
+          <form-button href="https://www.donio.cz/" :blank="true">
+            Podpořit
+          </form-button>
+        </div>
+      </div>
+      <div class="links__right">
+        <div class="link__box link__box--right">
+          <h3 class="links__title">
+            Rád podpořím samoživitelky.
+          </h3>
+          <form-button href="https://www.donio.cz/" :blank="true" type="primary-outline">
+            Podpořit
+          </form-button>
+        </div>
+        <img class="links__image-right" src="/samozivitelka.svg" alt="matka s dítětem">
+      </div>
+    </div>
+    <p class="signature">
+      Pro zaslání finančního příspěvku budete přesměrování na web Donio.cz
+    </p>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+.wrapper {
+  width: 100%;
+  margin: 0;
+}
+
+.links__wrapper {
+  display: flex;
+  width: 100%;
+  margin-bottom: 1.5rem;
+
+  @include sm {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.links__left,
+.links__right {
+  flex-basis: 50%;
+  width: 100%;
+  padding: 2rem;
+  position: relative;
+}
+
+.links__left {
+  background-color: $orange-light;
+  border-bottom-left-radius: 8px;
+
+  @include sm {
+    border-bottom-left-radius: 0;
+  }
+}
+
+.links__right {
+  background-color: $orange;
+  color: $white;
+  border-bottom-right-radius: 8px;
+
+  @include sm {
+    border-bottom-left-radius: 8px;
+  }
+}
+
+.link__box {
+  text-align: right;
+  display: inline-block;
+
+  &--left {
+    margin-left: 8rem;
+
+    @include xl {
+      display: block;
+    }
+
+    @include md {
+      text-align: left;
+      margin-left: 0;
+    }
+
+    @include sm {
+      text-align: right;
+    }
+
+    @include xs {
+      text-align: left;
+    }
+  }
+}
+
+.links__image-right {
+  position: absolute;
+  right: 1rem;
+  bottom: 30px;
+  height: 181px;
+  z-index: 0;
+
+  @include sm {
+    right: 0.7rem;
+  }
+}
+
+.links__image-left {
+  position: absolute;
+  left: 25px;
+  bottom: 30px;
+  height: 181px;
+}
+
+.links__image-left,
+.links__image-right {
+  @include md {
+    display: none;
+  }
+
+  @include sm {
+    display: block;
+  }
+
+  @include xs {
+    display: none;
+  }
+}
+
+.links__title {
+  font-family: $font-second;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+
+  @include xl {
+    width: 170px;
+
+    &:first-child {
+      margin-left: auto;
+
+      @include md {
+        margin-left: 0;
+        text-align: left;
+      }
+
+      @include sm {
+        margin-left: auto;
+        text-align: right;
+      }
+
+      @include xs {
+        margin-left: 0;
+        text-align: left;
+      }
+    }
+  }
+}
+
+.text {
+  max-width: 500px;
+  text-align: center;
+}
+
+.signature {
+  font-size: 12px;
+  text-align: center;
+}
+
+.icon--tick {
+  background-image: url('/checkbox.svg');
+}
+</style>

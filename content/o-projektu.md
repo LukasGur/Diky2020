@@ -1,3 +1,3 @@
 ---
-title: "O projektu"
+title: "Jak projekt vznikal"
 ---

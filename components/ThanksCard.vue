@@ -30,13 +30,16 @@ export default {
 
 <template>
   <div>
-    <p class="card__dedication">
-      <strong>{{ data.name }}</strong> děkuje
-      <strong>{{ data.addressee }}</strong>
-    </p>
-    <!-- <p v-for="(value, key) in data" :key="key">
-      {{ key }}: {{ value }}
-    </p> -->
+    <div class="card__dedication">
+      <div>
+        <strong>{{ data.name }}</strong>
+        děkuje
+        <strong>{{ data.addressee }}</strong>
+      </div>
+      <!-- <div>
+        <img src="/srdicko.svg" alt="">
+      </div> -->
+    </div>
     <div class="card">
       <div v-if="summary" class="card__content">
         <p class="card__text card__text--elipsis">
@@ -79,6 +82,9 @@ export default {
 
 .card__dedication {
   margin-bottom: 0.7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .card__text {
@@ -105,18 +111,26 @@ export default {
   &::before {
     content: '';
     position: absolute;
-    background-image: url("/darce.png");
+    background-image: url("/darce-pulka.svg");
     background-repeat: no-repeat;
     background-size: contain;
     display: block;
     height: 72px;
-    width: 100%;
+    width: 65px;
     bottom: 0;
+
+    @include xs {
+      display: none;
+    }
   }
 
   &--text {
     margin-left: 5rem;
     display: block;
+
+    @include xs {
+      margin-left: 0;
+    }
   }
 }
 

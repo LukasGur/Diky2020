@@ -38,9 +38,18 @@ export default {
     padding: 4px;
     text-decoration: none;
     text-transform: uppercase;
+    transition: 0.2s;
+
+    &:hover {
+      color: $orange-dark;
+    }
 
     &--orange {
-      color: $orange
+      color: $orange;
+
+      &:hover {
+        color: $orange-dark;
+      }
     }
   }
 </style>
