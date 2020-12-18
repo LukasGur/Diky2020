@@ -24,6 +24,7 @@
         </div>
       </div>
     </div>
+    <error-msg v-if="error" :error="error" />
     <div class="container wrapper">
       <date-countdown :count-down-date="newYearDate" class="header__info" />
       <div class="header__info header__info--right">
@@ -37,18 +38,24 @@
 <script>
 export default {
   async fetch () {
-    await fetch('https://diky2020.noltio.com/welcome').then(res => res.json()).then((res) => {
-      this.totalThanks = new Intl.NumberFormat('cs-CZ').format(res.data.totalThanks)
-      this.totalDonated = new Intl.NumberFormat('cs-CZ').format(res.data.donated)
-      this.newYearDate = new Date(res.data.eventEnd).getTime()
-    })
+    try {
+      await fetch('https://diky2020.noltio.com/welcome').then(res => res.json()).then((res) => {
+        this.totalThanks = new Intl.NumberFormat('cs-CZ').format(res.data.totalThanks)
+        this.totalDonated = new Intl.NumberFormat('cs-CZ').format(res.data.donated)
+        this.newYearDate = new Date(res.data.eventEnd).getTime()
+      })
+    } catch (error) {
+      this.error = 'Vyskytla se chyba na naší straně a pokoušíme se ji co nejrychleji opravit.'
+    }
   },
+  fetchDelay: 0,
   data () {
     return {
       mainTitle: null,
       totalThanks: '---',
       totalDonated: '---',
-      newYearDate: 0
+      newYearDate: 0,
+      error: null
     }
   },
   watch: {
@@ -134,5 +141,10 @@ export default {
   &--right {
     text-align: right;
   }
+}
+
+.error {
+  color: $red;
+  text-align: center;
 }
 </style>

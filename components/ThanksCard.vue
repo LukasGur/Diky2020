@@ -105,7 +105,7 @@ export default {
   &::before {
     content: '';
     position: absolute;
-    background-image: url("/giving-gift.png");
+    background-image: url("/darce.png");
     background-repeat: no-repeat;
     background-size: contain;
     display: block;

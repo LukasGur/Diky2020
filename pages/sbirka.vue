@@ -44,7 +44,7 @@ export default {
     </div>
     <div class="links__wrapper">
       <div class="links__left">
-        <img class="links__image-left" src="/hp-banner-illustration-left.png" alt="">
+        <img class="links__image-left" src="/hp-banner-illustration-left.png" alt="pán starající se o seniorku">
         <div class="link__box">
           <h3 class="links__title">
             Rád podpořím seniory.
@@ -63,7 +63,7 @@ export default {
             Podpořit
           </form-button>
         </div>
-        <img class="links__image-right" src="/hp-banner-illustration-right.png" alt="">
+        <img class="links__image-right" src="/samozivitelka.svg" alt="matka s dítětem">
       </div>
     </div>
     <p class="signature">
@@ -133,10 +133,11 @@ export default {
 
 .links__image-right {
   position: absolute;
-  right: 25px;
+  right: 12px;
   bottom: 30px;
-  width: 92px;
+  // width: 130px;
   height: 181px;
+  z-index: 0;
 }
 
 .links__image-left {

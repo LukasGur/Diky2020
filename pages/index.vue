@@ -1,15 +1,20 @@
 <script>
 export default {
   async fetch () {
-    await fetch(this.apiBaseUrl + this.apiGetThanks).then(res => res.json()).then((res) => {
-      this.thanksArray = this.thanksArray.concat(res.data.results)
-      if (!res.data._last && res.data._next) {
-        this.apiGetThanks = res.data._next
-      } else {
-        this.lastThanks = true
-      }
-    })
+    try {
+      await fetch(this.apiBaseUrl + this.apiGetThanks).then(res => res.json()).then((res) => {
+        this.thanksArray = this.thanksArray.concat(res.data.results)
+        if (!res.data._last && res.data._next) {
+          this.apiGetThanks = res.data._next
+        } else {
+          this.lastThanks = true
+        }
+      })
+    } catch (error) {
+      this.error = 'Vyskytla se chyba na naší straně a pokoušíme se ji co nejrychleji opravit.'
+    }
   },
+  fetchDelay: 0,
   fetchOnServer: false,
   async asyncData ({ $content, store, ssrContext }) {
     const content = await $content('index').only('title').fetch()
@@ -43,23 +48,26 @@ export default {
 </script>
 
 <template>
-  <div v-show="thanksArray.length > 4" class="container">
-    <div class="thanks__container">
-      <thanks-card v-for="thanks in thanksArray.slice(0, 4)" :key="thanks.id" :data="thanks" class="thanks__item" />
-    </div>
-    <call-to-action />
-    <div class="thanks__container">
-      <thanks-card v-for="thanks in thanksArray.slice(4)" :key="thanks.id" :data="thanks" class="thanks__item" />
-    </div>
-    <div class="thanks__end">
-      <div v-if="lastThanks">
-        <span class="thanks__end-text">Žádná další poděkování.</span>
-        <call-to-action />
+  <div class="container">
+    <div v-show="thanksArray.length > 4">
+      <div class="thanks__container">
+        <thanks-card v-for="thanks in thanksArray.slice(0, 4)" :key="thanks.id" :data="thanks" class="thanks__item" />
       </div>
-      <form-button v-else type="primary-outline" @click.native="$fetch">
-        Další poděkování
-      </form-button>
+      <call-to-action />
+      <div class="thanks__container">
+        <thanks-card v-for="thanks in thanksArray.slice(4)" :key="thanks.id" :data="thanks" class="thanks__item" />
+      </div>
+      <div class="thanks__end">
+        <div v-if="lastThanks">
+          <span class="thanks__end-text">Žádná další poděkování.</span>
+          <call-to-action />
+        </div>
+        <form-button v-else type="primary-outline" @click.native="$fetch">
+          Další poděkování
+        </form-button>
+      </div>
     </div>
+    <error-msg v-if="error" :error="error" />
   </div>
 </template>
 
@@ -86,5 +94,11 @@ export default {
   display: block;
   margin-bottom: 3rem;
   font-style: italic;
+}
+
+.error {
+  color: $red;
+  text-align: center;
+  margin-top: 2.5rem;
 }
 </style>
