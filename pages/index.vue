@@ -15,9 +15,8 @@ export default {
     }
   },
   fetchDelay: 0,
-  async asyncData ({ $content, store }) {
-    const content = await $content('index').only('title').fetch()
-    store.commit('setNewMainTitle', content.title)
+  asyncData ({ store }) {
+    store.commit('setNewMainTitle', 'Poděkuj a šiř pozitivní náladu')
   },
   data () {
     return {
@@ -71,6 +70,7 @@ export default {
 
   @include lg {
     flex-basis: 100%;
+    margin-bottom: 2.5rem;
   }
 }
 

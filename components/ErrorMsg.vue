@@ -1,7 +1,7 @@
 <template>
   <div class="error">
     {{ error }}
-    <strong>Zkuste prosím obnovit stránku</strong>
+    <strong v-show="refresh">Zkuste prosím obnovit stránku</strong>
   </div>
 </template>
 
@@ -11,6 +11,11 @@ export default {
     error: {
       type: String,
       required: true
+    },
+    refresh: {
+      type: Boolean,
+      required: false,
+      default: true
     }
   }
 }

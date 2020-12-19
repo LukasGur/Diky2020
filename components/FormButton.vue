@@ -65,6 +65,10 @@ export default {
   font-weight: bold;
   transition: 0.2s;
 
+  @include xs {
+    padding: 16px 30px;
+  }
+
   &:hover {
     background-color: $orange-dark;
   }
@@ -75,6 +79,10 @@ export default {
   background-color: $white;
   border: 1px solid $orange;
   padding: 17px 45px;
+
+  @include xs {
+    padding: 17px 31px;
+  }
 
   &:hover {
     background-color: $orange-light-2;

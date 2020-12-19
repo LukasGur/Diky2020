@@ -1,3 +1,0 @@
----
-title: "Sdílej své poděkování"
----

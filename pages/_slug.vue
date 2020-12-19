@@ -1,18 +1,123 @@
-<template>
-  <div class="container">
-    <h1>this is thanks detail</h1>
-  </div>
-</template>
-
 <script>
 export default {
-  async asyncData ({ $content, store }) {
-    const content = await $content('thanks-detail').only('title').fetch()
-    store.commit('setNewMainTitle', content.title)
+  async fetch () {
+    try {
+      await fetch('https://api.diky2020.cz/thanks/' + this.shortId).then(res => res.json()).then((res) => {
+        if (res.status === 'ERR') {
+          this.error = 'Omlouváme se, ale tato děkovací kartička pravděpodobně neexistuje'
+        } else if (res.status === 'OK') {
+          this.thanks = res.data
+        }
+      })
+    } catch (err) {
+      this.error = 'Vyskytla se chyba na naší straně a pokoušíme se ji co nejrychleji opravit.'
+    }
+  },
+  fetchDelay: 0,
+  asyncData ({ store, $data, params }) {
+    store.commit('setNewMainTitle', 'Poděkuj a šiř pozitivní náladu')
+    const shortId = params.slug
+    return { shortId }
+  },
+  data () {
+    return {
+      error: null,
+      thanks: null,
+      fullUrl: null,
+      url: null
+    }
+  },
+  mounted () {
+    this.getUrl()
+  },
+  methods: {
+    getUrl () {
+      const splitUrl = window.location.href.split('/')
+      this.fullUrl = splitUrl[0] + '//' + splitUrl[2]
+      this.url = splitUrl[2]
+    }
   }
 }
 </script>
 
-<style>
+<template>
+  <div class="container">
+    <!-- <p v-for="(information, key) in thanks" :key="key">
+      {{ key }} - {{ information }}
+    </p> -->
+    <error-msg v-if="error" :refresh="false" :error="error" />
+    <div v-else-if="thanks">
+      <div class="wrapper">
+        <thanks-card class="thanks-card" :detail-link="false" :summarize="false" :data="thanks" />
+        <img v-if="thanks.image" :src="thanks.image" alt="Obrázek přiložený k přáníčku" class="image">
+      </div>
+      <div class="thanks-link">
+        <span class="thanks-link__text">Najdeš jej zde:</span>
+        <form-button :href="fullUrl + '/' + shortId" type="primary-outline" :blank="true">
+          {{ url }}/{{ shortId }}
+        </form-button>
+      </div>
+      <call-to-action />
+    </div>
+  </div>
+</template>
 
+<style lang="scss" scoped>
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  @include sm {
+    flex-direction: column-reverse;
+  }
+}
+
+.image {
+  border-radius: 8px;
+  flex-basis: 48%;
+  width: 48%;
+  height: 100%;
+
+  @include lg {
+    width: 28%;
+    flex-basis: 28%;
+  }
+
+  @include sm {
+    width: 100%;
+    flex-basis: 100%;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.thanks-card {
+  flex-basis: 48%;
+
+  @include lg {
+    flex-basis: 68%;
+  }
+}
+
+.thanks-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 2.4px;
+  font-weight: bold;
+  margin: 2.5rem 0;
+
+  @include sm {
+    flex-direction: column;
+  }
+}
+
+.thanks-link__text {
+  margin-right: 1rem;
+
+  @include sm {
+    margin-bottom: 1rem;
+    margin-right: 0;
+  }
+}
 </style>

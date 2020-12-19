@@ -14,7 +14,12 @@
 
 <script>
 export default {
-  props: ['error'],
+  props: {
+    error: {
+      type: Object,
+      required: true
+    }
+  },
   asyncData ({ store }) {
     store.commit('setNewMainTitle', 'Tato stránka nebyla nalezena')
   }

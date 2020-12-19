@@ -94,11 +94,11 @@
     @include sm {
       text-align: right;
     }
+  }
 
     @include xs {
       text-align: left;
     }
-  }
 }
 
 .links__image-right {

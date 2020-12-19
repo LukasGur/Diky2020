@@ -6,26 +6,46 @@ export default {
     }
   },
   methods: {
-    previewFiles (event) {
-      if (event.target.files[0]) {
-        this.fileInputText = event.target.files[0].name
-      } else {
-        this.fileInputText = 'Nahrát obrázek'
+    previewFiles (e) {
+      if (e.target.files[0]) {
+        this.fileInputText = e.target.files[0].name
+        this.$emit('input', e.target.files[0])
       }
+    },
+    removeFile () {
+      this.$emit('input', new File([''], ''))
+      this.fileInputText = 'Nahrát obrázek'
     }
   }
 }
 </script>
 
 <template>
-  <label class="file-input">
-    <i class="icon icon--paperclip" />
-    {{ fileInputText }}
-    <input accept="image/*," type="file" style="display: none;" name="image" @change="previewFiles">
-  </label>
+  <div class="wrapper">
+    <button v-show="fileInputText !== 'Nahrát obrázek'" class="remove-file" @click.prevent="removeFile">
+      &#10005;
+    </button>
+    <label class="file-input">
+      <i class="icon icon--paperclip" />
+      {{ fileInputText }}
+      <input
+        ref="inputFile"
+        accept="image/*,"
+        type="file"
+        style="display: none;"
+        name="image"
+        @change="previewFiles"
+      >
+    </label>
+  </div>
 </template>
 
 <style lang="scss" scoped>
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+
 .file-input {
   color: $orange;
   background-color: $white;
@@ -50,5 +70,25 @@ export default {
 
 .icon--paperclip {
   background-image: url('/paperclip.svg');
+}
+
+.remove-file {
+  background-color: $orange;
+  color: $white;
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 1.5rem;
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: $orange-dark;
+  }
 }
 </style>

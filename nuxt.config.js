@@ -42,8 +42,17 @@ export default {
   modules: [
     '@nuxtjs/style-resources',
     '@nuxtjs/axios',
-    '@nuxt/content'
+    '@nuxt/content',
+    '@nuxtjs/recaptcha'
   ],
+
+  recaptcha: {
+    hideBadge: true,
+    language: 'cs',
+    siteKey: '6Lf86gsaAAAAAIycG0yPBjgcjAyE6JDE0ypld5yF',
+    version: 2,
+    size: 'invisible'
+  },
 
   styleResources: {
     scss: '~/assets/scss/*.scss'

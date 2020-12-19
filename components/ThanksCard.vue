@@ -4,25 +4,21 @@ export default {
     data: {
       type: Object,
       required: true
-    }
-  },
-  data () {
-    return {
-      summary: null,
-      truncate: null
+    },
+    summarize: {
+      type: Boolean,
+      required: false,
+      default: true
+    },
+    detailLink: {
+      type: Boolean,
+      required: false,
+      default: true
     }
   },
   created () {
-    if (this.data.text.length > 120) {
-      this.summary = true
-      this.truncate = this.data.text.substring(0, 120) + '...'
-    } else {
-      this.summary = false
-    }
-  },
-  methods: {
-    toggleSummary () {
-      this.summary = !this.summary
+    if (this.data.text.length > 120 && this.summarize) {
+      this.data.text = this.data.text.substring(0, 120) + '...'
     }
   }
 }
@@ -36,25 +32,17 @@ export default {
         děkuje
         <strong>{{ data.addressee }}</strong>
       </div>
-      <!-- <div>
+      <div>
         <img src="/srdicko.svg" alt="">
-      </div> -->
+      </div>
     </div>
     <div class="card">
-      <div v-if="summary" class="card__content">
+      <div class="card__content">
         <p class="card__text card__text--elipsis">
-          {{ truncate }}
-        </p>
-        <button-text class="card__show-more" @click.native="toggleSummary">
-          Zobrazit více
-        </button-text>
-      </div>
-      <div v-else class="card__content">
-        <p class="card__text">
           {{ data.text }}
         </p>
-        <button-text v-if="truncate" class="card__show-more" @click.native="toggleSummary">
-          Zobrazit méně
+        <button-text v-if="detailLink" :to="'/' + data.shortId" class="card__show-detail">
+          Zobrazit detail
         </button-text>
       </div>
       <div v-if="data.donation" class="card__subsidy">
@@ -71,13 +59,12 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
-  // max-height: 197px;
+  height: calc(100% - 40px);
 }
 
 .card__content {
   padding: 1.5rem 2rem;
-  padding-bottom: 0;
+  height: 100%;
 }
 
 .card__dedication {
@@ -134,7 +121,8 @@ export default {
   }
 }
 
-.card__show-more {
+.card__show-detail {
   float: right;
+  margin-top: 0.8rem;
 }
 </style>

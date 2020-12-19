@@ -1,8 +1,7 @@
 <script>
 export default {
-  async asyncData ({ $content, store, params }) {
-    const content = await $content('sbirka').only('title').fetch()
-    store.commit('setNewMainTitle', content.title)
+  asyncData ({ store, params }) {
+    store.commit('setNewMainTitle', 'Podpoř sbírku samoživitelkám')
     return { thanksId: params.slug }
   },
   data () {
