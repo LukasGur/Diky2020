@@ -30,7 +30,7 @@ export default {
       {{ fileInputText }}
       <input
         ref="inputFile"
-        accept="image/*,"
+        accept="image/png, image/jpeg, image/gif"
         type="file"
         style="display: none;"
         name="image"

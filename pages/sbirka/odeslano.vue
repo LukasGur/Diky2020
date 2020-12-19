@@ -1,13 +1,14 @@
 <script>
 export default {
-  asyncData ({ store, params }) {
+  asyncData ({ store, params, route }) {
     store.commit('setNewMainTitle', 'Podpoř sbírku samoživitelkám')
-    return { thanksId: params.slug }
   },
   data () {
     return {
       fullUrl: null,
-      url: null
+      url: null,
+      thanksId: this.$route.query.id,
+      thanksShortId: this.$route.query.shortId
     }
   },
   mounted () {
@@ -35,13 +36,12 @@ export default {
       </span>
       <div class="confirmation-link">
         Najdeš jej zde:
-        <form-button class="thanks-link" type="primary-outline" :href="`${fullUrl}/${thanksId}`" :blank="true">
-          diky2020.cz/IXyAlvLI
-          <!-- {{ url }}/{{ thanksId }} -->
+        <form-button class="thanks-link" type="primary-outline" :href="`${fullUrl}/${thanksShortId}`" :blank="true">
+          {{ url }}/{{ thanksShortId }}
         </form-button>
       </div>
     </div>
-    <donio-links />
+    <donio-links class="donio-link" />
   </div>
 </template>
 
@@ -202,5 +202,9 @@ export default {
   @include md {
     margin-top: 0.8rem;
   }
+}
+
+.donio-link {
+  margin: 0;
 }
 </style>

@@ -16,6 +16,11 @@ export default {
       default: true
     }
   },
+  computed: {
+    whiteSpaces () {
+      return this.data.text.substring(0, 45).includes(' ')
+    }
+  },
   created () {
     if (this.data.text.length > 120 && this.summarize) {
       this.data.text = this.data.text.substring(0, 120) + '...'
@@ -32,13 +37,11 @@ export default {
         děkuje
         <strong>{{ data.addressee }}</strong>
       </div>
-      <div>
-        <img src="/srdicko.svg" alt="">
-      </div>
+      <like-button :count="data.likes" :thanks-id="data.id" />
     </div>
     <div class="card">
       <div class="card__content">
-        <p class="card__text card__text--elipsis">
+        <p class="card__text" :class="{'card__text--break-all': !whiteSpaces}">
           {{ data.text }}
         </p>
         <button-text v-if="detailLink" :to="'/' + data.shortId" class="card__show-detail">
@@ -77,13 +80,10 @@ export default {
 .card__text {
   line-height: 1.4rem;
   letter-spacing: 1px;
+  overflow: hidden;
 
-  &--elipsis {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
+  &--break-all {
+    word-break: break-all;
   }
 }
 

@@ -52,7 +52,7 @@ export default {
         <img v-if="thanks.image" :src="thanks.image" alt="Obrázek přiložený k přáníčku" class="image">
       </div>
       <div class="thanks-link">
-        <span class="thanks-link__text">Najdeš jej zde:</span>
+        <span class="thanks-link__text">Sdílej poděkování:</span>
         <form-button :href="fullUrl + '/' + shortId" type="primary-outline" :blank="true">
           {{ url }}/{{ shortId }}
         </form-button>

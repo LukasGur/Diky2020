@@ -1,16 +1,3 @@
-<template>
-  <label class="label">
-    <span class="label__text">{{ label }} <span v-if="required" class="label__required">*</span></span>
-    <textarea
-      class="input"
-      rows="6"
-      :placeholder="placeholder"
-      :value="value"
-      @input="updateValue($event.target.value)"
-    />
-  </label>
-</template>
-
 <script>
 export default {
   props: {
@@ -31,6 +18,19 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    },
+    maxCharacters: {
+      type: Number,
+      required: false,
+      default: null
+    }
+  },
+  computed: {
+    textCharacterCount () {
+      return this.value.length
+    },
+    maxCharactersReached () {
+      return this.textCharacterCount > this.maxCharacters
     }
   },
   methods: {
@@ -41,33 +41,64 @@ export default {
 }
 </script>
 
+<template>
+  <label class="label">
+    <div class="label__text">
+      {{ label }} <span v-if="required" class="label__required">*</span>
+      <span v-show="maxCharacters" class="character-counter" :class="{'character-counter--reached': maxCharactersReached}">
+        {{ textCharacterCount }}/{{ maxCharacters }}
+      </span>
+    </div>
+    <textarea
+      class="input"
+      rows="6"
+      :placeholder="placeholder"
+      :value="value"
+      @input="updateValue($event.target.value)"
+    />
+  </label>
+</template>
+
 <style lang="scss" scoped>
-  .input {
-    padding: 1rem;
-    width: 100%;
-    border: 1px solid $gray;
-    border-radius: 4px;
+.input {
+  padding: 1rem;
+  width: 100%;
+  border: 1px solid $gray;
+  border-radius: 4px;
 
-    &:focus {
-      background-color: $yellow-light;
-    }
+  &:focus {
+    background-color: $yellow-light;
   }
+}
 
-  .input::placeholder {
-    color: $gray;
-  }
+.input::placeholder {
+  color: $gray;
+}
 
-  .label {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
+.label {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 
-  .label__required {
+.label__required {
+  color: $red;
+}
+
+.label__text {
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.character-counter {
+  position: absolute;
+  font-size: 0.8rem;
+  right: 0;
+  bottom: 0;
+
+  &--reached {
     color: $red;
+    font-weight: bold;
   }
-
-  .label__text {
-    margin-bottom: 0.5rem;
-  }
+}
 </style>
