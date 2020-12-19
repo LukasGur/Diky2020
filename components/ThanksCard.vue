@@ -44,7 +44,7 @@ export default {
         <p class="card__text" :class="{'card__text--break-all': !whiteSpaces}">
           {{ data.text }}
         </p>
-        <button-text v-if="detailLink" :to="'/' + data.shortId" class="card__show-detail">
+        <button-text v-if="detailLink" :to="'/t?id=' + data.shortId" class="card__show-detail">
           Zobrazit detail
         </button-text>
       </div>

@@ -15,17 +15,16 @@ export default {
   },
   fetchDelay: 0,
   fetchOnServer: false,
-  asyncData ({ store, $data, params }) {
+  asyncData ({ store }) {
     store.commit('setNewMainTitle', 'Poděkuj a šiř pozitivní náladu')
-    const shortId = params.slug
-    return { shortId }
   },
   data () {
     return {
       error: null,
       thanks: null,
       fullUrl: null,
-      url: null
+      url: null,
+      shortId: this.$route.query.id
     }
   },
   mounted () {
@@ -51,7 +50,7 @@ export default {
       </div>
       <div class="thanks-link">
         <span class="thanks-link__text">Sdílej poděkování:</span>
-        <form-button :href="fullUrl + '/' + shortId" type="primary-outline" :blank="true">
+        <form-button :href="fullUrl + '/t?id=' + shortId" type="primary-outline" :blank="true">
           {{ url }}/{{ shortId }}
         </form-button>
       </div>
