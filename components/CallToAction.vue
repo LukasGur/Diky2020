@@ -7,7 +7,7 @@
       <form-button to="/podekovat">
         Poděkovat
       </form-button>
-      <img class="banner__image" src="/objeti.svg" alt="objetí">
+      <img class="banner__image" src="~/assets/images/objeti.svg" alt="objetí">
     </div>
   </div>
 </template>
