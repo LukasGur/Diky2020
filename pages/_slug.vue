@@ -14,6 +14,7 @@ export default {
     }
   },
   fetchDelay: 0,
+  fetchOnServer: false,
   asyncData ({ store, $data, params }) {
     store.commit('setNewMainTitle', 'Poděkuj a šiř pozitivní náladu')
     const shortId = params.slug

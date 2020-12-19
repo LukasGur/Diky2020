@@ -12,6 +12,7 @@ export default {
     }
   },
   fetchDelay: 0,
+  fetchOnServer: false,
   data () {
     return {
       mainTitle: null,
