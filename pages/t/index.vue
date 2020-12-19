@@ -51,7 +51,7 @@ export default {
       <div class="thanks-link">
         <span class="thanks-link__text">Sdílej poděkování:</span>
         <form-button :href="fullUrl + '/t?id=' + shortId" type="primary-outline" :blank="true">
-          {{ url }}/{{ shortId }}
+          {{ url }}/t?id={{ shortId }}
         </form-button>
       </div>
       <call-to-action />

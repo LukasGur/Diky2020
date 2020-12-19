@@ -36,8 +36,8 @@ export default {
       </span>
       <div class="confirmation-link">
         Najdeš jej zde:
-        <form-button class="thanks-link" type="primary-outline" :href="`${fullUrl}/${thanksShortId}`" :blank="true">
-          {{ url }}/{{ thanksShortId }}
+        <form-button class="thanks-link" type="primary-outline" :href="`${fullUrl}/t?id=${thanksShortId}`" :blank="true">
+          {{ url }}/t?id={{ thanksShortId }}
         </form-button>
       </div>
     </div>
