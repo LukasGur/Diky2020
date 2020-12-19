@@ -1,3 +1,15 @@
+<script>
+export default {
+  props: {
+    thanksId: {
+      type: String,
+      required: false,
+      default: null
+    }
+  }
+}
+</script>
+
 <template>
   <div class="wrapper">
     <div class="links__wrapper">
@@ -7,7 +19,7 @@
           <h3 class="links__title">
             Rád podpořím seniory.
           </h3>
-          <form-button href="https://www.donio.cz/" :blank="true">
+          <form-button :href="'https://www.doniodev.cz/prispevek/730?utm_medium=referral&utm_source=Diky2020.cz&utm_campaign=Diky2020&diky2020Id=' + thanksId" :blank="true">
             Podpořit
           </form-button>
         </div>
@@ -17,7 +29,7 @@
           <h3 class="links__title">
             Rád podpořím samoživitelky.
           </h3>
-          <form-button href="https://www.donio.cz/" :blank="true" type="primary-outline">
+          <form-button :href="'https://www.doniodev.cz/prispevek/730?utm_medium=referral&utm_source=Diky2020.cz&utm_campaign=Diky2020&diky2020Id=' + thanksId" :blank="true" type="primary-outline">
             Podpořit
           </form-button>
         </div>

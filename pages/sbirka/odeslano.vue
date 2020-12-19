@@ -41,7 +41,7 @@ export default {
         </form-button>
       </div>
     </div>
-    <donio-links class="donio-link" />
+    <donio-links :thanks-id="thanksId" class="donio-link" />
   </div>
 </template>
 

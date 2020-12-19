@@ -32,12 +32,9 @@ export default {
 <template>
   <div>
     <div class="card__dedication">
-      <div>
-        <strong>{{ data.name }}</strong>
-        děkuje
-        <strong>{{ data.addressee }}</strong>
-      </div>
-      <like-button :count="data.likes" :thanks-id="data.id" />
+      <strong>{{ data.name }}</strong>
+      děkuje
+      <strong>{{ data.addressee }}</strong>
     </div>
     <div class="card">
       <div class="card__content">
@@ -72,9 +69,6 @@ export default {
 
 .card__dedication {
   margin-bottom: 0.7rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .card__text {
