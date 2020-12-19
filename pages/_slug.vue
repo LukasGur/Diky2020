@@ -42,9 +42,6 @@ export default {
 
 <template>
   <div class="container">
-    <!-- <p v-for="(information, key) in thanks" :key="key">
-      {{ key }} - {{ information }}
-    </p> -->
     <error-msg v-if="error" :refresh="false" :error="error" />
     <div v-else-if="thanks">
       <div class="wrapper">

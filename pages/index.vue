@@ -15,6 +15,7 @@ export default {
     }
   },
   fetchDelay: 0,
+  fetchOnServer: false,
   asyncData ({ store }) {
     store.commit('setNewMainTitle', 'Poděkuj a šiř pozitivní náladu')
   },
