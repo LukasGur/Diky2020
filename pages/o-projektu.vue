@@ -1,8 +1,6 @@
 <template>
   <div class="container">
-    <article>
-      <nuxt-content :document="content" />
-    </article>
+    <nuxt-content :document="content" />
   </div>
 </template>
 

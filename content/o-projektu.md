@@ -1,14 +1,13 @@
 ---
 title: Jak na automatický deploy webu
-author:efewf
+author:
   name: Jan Švábík
   url: https://noltio.com/cs/tym/jan-svabik/
   email: jansvabik@jansvabik.cz
 ---
-V tomto premiérovém článku se spolu p
-ký deploy statických webových stránek přímo z repozitáře pomocí Netlify.
+V tomto premiérovém článku se spolu podíváme na automatický deploy statických webových stránek přímo z repozitáře pomocí Netlify.
 
-## Co je automatický deplo
+## Co je automatický deploy
 
 Pro tento článek chápejme automatický deploy jako nasazení webu na server bez nutnosti přímého zásahu člověka, který je automaticky spuštěn v momentě, kdy nastane nějaká akce. V tomto případě bude touto akcí **commit** do nějaké konkrétní větve v repozitáři.
 
