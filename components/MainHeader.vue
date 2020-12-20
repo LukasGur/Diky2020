@@ -108,7 +108,7 @@ export default {
   background-position: center;
   margin-right: 0.5rem;
   position: relative;
-  top: 0.5rem;
+  top: 0.2rem;
 }
 
 .wrapper {
@@ -177,7 +177,7 @@ export default {
 
   @include sm {
     font-size: 30px;
-    width: 230px;
+    width: 236px;
   }
 
   @include xs {

@@ -55,13 +55,17 @@
   font-family: $font-second;
   font-size: 2rem;
 
+  @media (max-width: 1050px) {
+    font-size: 1.8rem;
+  }
+
   @media (max-width: 920px) {
     max-width: 350px;
   }
 
   @media (max-width: 670px) {
     font-size: 1.5rem;
-    max-width: 250px;
+    max-width: 268px;
   }
 
   @media (max-width: 580px) {
