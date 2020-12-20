@@ -10,7 +10,8 @@ export default {
       text: '',
       image: null,
       error: null,
-      maxTextLength: 600
+      maxTextLength: 600,
+      loading: false
     }
   },
   mounted () {
@@ -20,10 +21,12 @@ export default {
     onError (error) {
       // eslint-disable-next-line no-console
       console.log('Error happened:', error)
+      this.loading = false
       this.error = error
     },
     async onSubmit () {
       this.error = null
+      this.loading = true
 
       try {
         await this.$recaptcha.getResponse()
@@ -31,6 +34,7 @@ export default {
       } catch (error) {
         // eslint-disable-next-line no-console
         console.log('Login error:', error)
+        this.loading = false
         this.error = error
       }
     },
@@ -54,6 +58,7 @@ export default {
       }
       const response = await fetch('https://api.diky2020.cz/thanks/', requestOptions)
       const data = await response.json()
+      this.loading = false
       if (data.status === 'ERR') {
         this.error = data.msg
         return
@@ -96,7 +101,12 @@ export default {
           Chci pouze podpořit sbírku
         </button-text>
         <form-button class="form__footer-item">
-          Odeslat poděkování
+          <span v-if="loading">
+            Odesílání...
+          </span>
+          <span v-else>
+            Odeslat poděkování
+          </span>
         </form-button>
       </div>
     </form>

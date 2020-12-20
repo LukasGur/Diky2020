@@ -34,6 +34,7 @@ export default {
 
 <template>
   <div class="container">
+    <loading-bar v-show="$fetchState.pending" />
     <div v-show="thanksArray.length > 4">
       <div class="thanks__container">
         <thanks-card v-for="thanks in thanksArray.slice(0, 4)" :key="thanks.id" :data="thanks" class="thanks__item" />

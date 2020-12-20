@@ -70,6 +70,7 @@ export default {
   transition: 0.2s;
   text-align: center;
   text-transform: none;
+  border: 1px solid $orange;
 
   @include xs {
     padding: 16px 30px;
@@ -87,7 +88,6 @@ export default {
 .button--primary-outline {
   color: $orange;
   background-color: $white;
-  border: 1px solid $orange;
 
   &:hover {
     background-color: $orange-light-2;

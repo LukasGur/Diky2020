@@ -39,6 +39,7 @@ export default {
     async copyToClipboard (url) {
       await this.$copyText(url)
       const btn = document.getElementById('copy')
+      btn.style.width = `${btn.offsetWidth}px`
       btn.innerHTML = 'Zkopírováno'
       btn.classList.remove('button--primary-outline')
       btn.disabled = true
@@ -54,6 +55,7 @@ export default {
 
 <template>
   <div class="container">
+    <loading-bar v-show="$fetchState.pending" />
     <error-msg v-if="error" :refresh="false" :error="error" />
     <div v-else-if="thanks">
       <div class="wrapper">
