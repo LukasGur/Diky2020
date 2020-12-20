@@ -45,7 +45,7 @@ export default {
       btn.disabled = true
       setTimeout(() => {
         btn.classList.add('button--primary-outline')
-        btn.innerHTML = `${this.url}/t/${this.shortId}`
+        btn.innerHTML = `${this.url}/${this.shortId}`
         btn.disabled = false
       }, 1000)
     }
@@ -64,14 +64,14 @@ export default {
       </div>
       <div class="thanks-link">
         <span class="thanks-link__text">Sdílej poděkování:</span>
-        <form-button id="copy" :uppercase="false" type="primary-outline" @click.prevent.native="copyToClipboard(fullUrl + '/t/' + shortId)">
-          {{ url }}/t/{{ shortId }}
+        <form-button id="copy" :uppercase="false" type="primary-outline" @click.prevent.native="copyToClipboard(fullUrl + '/' + shortId)">
+          {{ url }}/{{ shortId }}
         </form-button>
       </div>
       <div class="share-links">
         <ShareNetwork
           network="Facebook"
-          :url="`${fullUrl}/t/${shortId}`"
+          :url="`${fullUrl}/${shortId}`"
           title="Díky 2020"
           tag="a"
           class="share-links__item"
@@ -81,7 +81,7 @@ export default {
         </ShareNetwork>
         <ShareNetwork
           network="Twitter"
-          :url="`${fullUrl}/t/${shortId}`"
+          :url="`${fullUrl}/${shortId}`"
           title="Díky 2020"
           class="share-links__item"
           @click.prevent.native=""
@@ -90,7 +90,7 @@ export default {
         </ShareNetwork>
         <ShareNetwork
           network="SMS"
-          :url="`${fullUrl}/t/${shortId}`"
+          :url="`${fullUrl}/${shortId}`"
           title="Díky 2020"
           class="share-links__item"
           @click.prevent.native=""
@@ -99,7 +99,7 @@ export default {
         </ShareNetwork>
         <ShareNetwork
           network="Email"
-          :url="`${fullUrl}/t/${shortId}`"
+          :url="`${fullUrl}/${shortId}`"
           title="Díky 2020"
           class="share-links__item"
           @click.prevent.native=""
