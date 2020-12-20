@@ -121,7 +121,7 @@ export default {
 .links__image-right {
   position: absolute;
   right: 0.6rem;
-  bottom: 30px;
+  bottom: 20px;
   height: 181px;
   z-index: 0;
 

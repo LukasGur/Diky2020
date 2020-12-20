@@ -1,7 +1,7 @@
 <script>
 export default {
-  asyncData ({ store, params, route }) {
-    store.commit('setNewMainTitle', 'Podpoř sbírku samoživitelkám')
+  asyncData ({ store }) {
+    store.commit('setNewMainTitle', 'Podpoř sbírku samoživitelům')
   },
   data () {
     return {

@@ -1,9 +1,3 @@
-<template>
-  <div class="container">
-    <nuxt-content :document="content" />
-  </div>
-</template>
-
 <script>
 export default {
   async asyncData ({ $content, store }) {
@@ -13,6 +7,12 @@ export default {
   }
 }
 </script>
+
+<template>
+  <div class="container">
+    <nuxt-content :document="content" />
+  </div>
+</template>
 
 <style lang="scss">
 .nuxt-content {
