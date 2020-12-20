@@ -12,12 +12,13 @@ export default {
     }
   },
   fetchDelay: 0,
+  fetchOnServer: false,
   data () {
     return {
       mainTitle: null,
       totalThanks: '---',
       totalDonated: '---',
-      newYearDate: 0,
+      newYearDate: 1609455599999,
       error: null
     }
   },
