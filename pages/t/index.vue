@@ -71,8 +71,9 @@ export default {
           network="Facebook"
           url="https://diky2020.netlify.app/t?id=1lZIyZh5"
           title="Díky 2020"
-          tag="button"
+          tag="a"
           class="share-links__item"
+          @click.prevent.native=""
         >
           <i class="icon icon--facebook" />
         </ShareNetwork>
@@ -80,8 +81,8 @@ export default {
           network="Twitter"
           url="https://diky2020.netlify.app/t?id=1lZIyZh5"
           title="Díky 2020"
-          tag="button"
           class="share-links__item"
+          @click.prevent.native=""
         >
           <i class="icon icon--twitter" />
         </ShareNetwork>
@@ -89,8 +90,8 @@ export default {
           network="SMS"
           url="https://diky2020.netlify.app/t?id=1lZIyZh5"
           title="Díky 2020"
-          tag="button"
           class="share-links__item"
+          @click.prevent.native=""
         >
           <i class="icon icon--sms" />
         </ShareNetwork>
@@ -98,8 +99,8 @@ export default {
           network="Email"
           url="https://diky2020.netlify.app/t?id=1lZIyZh5"
           title="Díky 2020"
-          tag="button"
           class="share-links__item"
+          @click.prevent.native=""
         >
           <i class="icon icon--email" />
         </ShareNetwork>
