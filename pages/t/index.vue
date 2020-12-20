@@ -66,6 +66,44 @@ export default {
           {{ url }}/t?id={{ shortId }}
         </form-button>
       </div>
+      <div class="share-links">
+        <ShareNetwork
+          network="Facebook"
+          url="https://diky2020.netlify.app/t?id=1lZIyZh5"
+          title="Díky 2020"
+          tag="button"
+          class="share-links__item"
+        >
+          <i class="icon icon--facebook" />
+        </ShareNetwork>
+        <ShareNetwork
+          network="Twitter"
+          url="https://diky2020.netlify.app/t?id=1lZIyZh5"
+          title="Díky 2020"
+          tag="button"
+          class="share-links__item"
+        >
+          <i class="icon icon--twitter" />
+        </ShareNetwork>
+        <ShareNetwork
+          network="SMS"
+          url="https://diky2020.netlify.app/t?id=1lZIyZh5"
+          title="Díky 2020"
+          tag="button"
+          class="share-links__item"
+        >
+          <i class="icon icon--sms" />
+        </ShareNetwork>
+        <ShareNetwork
+          network="Email"
+          url="https://diky2020.netlify.app/t?id=1lZIyZh5"
+          title="Díky 2020"
+          tag="button"
+          class="share-links__item"
+        >
+          <i class="icon icon--email" />
+        </ShareNetwork>
+      </div>
       <call-to-action />
     </div>
   </div>
@@ -128,5 +166,36 @@ export default {
     margin-bottom: 1rem;
     margin-right: 0;
   }
+}
+
+.share-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.share-links__item {
+  border: none;
+  background: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  margin: 0 1rem;
+  margin-bottom: 2rem;
+}
+
+.icon--facebook {
+  background-image: url('/share-icons/facebook.svg');
+}
+
+.icon--twitter {
+  background-image: url('/share-icons/twitter.svg');
+}
+
+.icon--email {
+  background-image: url('/share-icons/email.svg');
+}
+
+.icon--sms {
+  background-image: url('/share-icons/sms.svg');
 }
 </style>
