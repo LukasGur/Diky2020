@@ -53,11 +53,11 @@ export default {
             <nuxt-link class="header__link" to="/podekovat">
               Napsat poděkování
             </nuxt-link>
-            <nuxt-link class="header__link" to="/sbirka">
-              Sbírka
+            <nuxt-link class="header__link" to="/pomahame">
+              Pomáháme
             </nuxt-link>
-            <nuxt-link class="header__link" to="/o-projektu">
-              O&nbsp;projektu
+            <nuxt-link class="header__link" to="/myslenka">
+              Myšlenka
             </nuxt-link>
           </nav>
         </div>
@@ -100,18 +100,15 @@ export default {
 }
 
 .header__logo {
-  width: 155px;
-  height: 88px;
+  width: 100px;
+  height: 56.5px;
   background-image: url('/diky2020-logo-donio.svg');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
   margin-right: 0.5rem;
-
-  @include sm {
-    width: 100px;
-    height: 56.5px;
-  }
+  position: relative;
+  top: 0.5rem;
 }
 
 .wrapper {
@@ -133,6 +130,11 @@ export default {
   position: absolute;
   width: 100vw;
   right: 0;
+  bottom: -2rem;
+
+  @include xs {
+    right: -0.1rem
+  }
 }
 
 .header__link {
@@ -145,8 +147,12 @@ export default {
     text-shadow: -0.06ex 0 $black, 0.06ex 0 $black;
   }
 
+  @include sm {
+    margin-left: 1rem;
+  }
+
   @include xs {
-    margin-left: 0.8rem;
+    margin-left: 0.2rem;
   }
 
   &.nuxt-link-active {
@@ -171,7 +177,7 @@ export default {
 
   @include sm {
     font-size: 30px;
-    max-width: 250px;
+    max-width: 260px;
   }
 
   @include xs {

@@ -7,7 +7,7 @@
 <script>
 export default {
   async asyncData ({ $content, store }) {
-    const content = await $content('o-projektu').fetch()
+    const content = await $content('myslenka').fetch()
     store.commit('setNewMainTitle', content.title)
     return { content }
   }

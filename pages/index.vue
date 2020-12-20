@@ -34,7 +34,7 @@ export default {
 
 <template>
   <div class="container">
-    <ShareNetwork
+    <!-- <ShareNetwork
       network="facebook"
       url="https://news.vuejs.org/issues/180"
       title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
@@ -44,7 +44,7 @@ export default {
       tag="button"
     >
       Facebook icon
-    </ShareNetwork>
+    </ShareNetwork> -->
     <div v-show="thanksArray.length > 4">
       <div class="thanks__container">
         <thanks-card v-for="thanks in thanksArray.slice(0, 4)" :key="thanks.id" :data="thanks" class="thanks__item" />

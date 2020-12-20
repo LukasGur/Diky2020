@@ -17,7 +17,7 @@ export default {
         <img class="links__image-left" src="/hp-banner-illustration-left.png" alt="pán starající se o seniorku">
         <div class="link__box link__box--left">
           <h3 class="links__title">
-            Rád podpořím seniory.
+            Podpořím seniory.
           </h3>
           <form-button :href="'https://www.doniodev.cz/prispevek/730?utm_medium=referral&utm_source=Diky2020.cz&utm_campaign=Diky2020&diky2020Id=' + thanksId" :blank="true">
             Podpořit
@@ -27,7 +27,7 @@ export default {
       <div class="links__right">
         <div class="link__box link__box--right">
           <h3 class="links__title">
-            Rád podpořím samoživitelky.
+            Podpořím samoživitele.
           </h3>
           <form-button :href="'https://www.doniodev.cz/prispevek/730?utm_medium=referral&utm_source=Diky2020.cz&utm_campaign=Diky2020&diky2020Id=' + thanksId" :blank="true" type="primary-outline">
             Podpořit
@@ -64,8 +64,12 @@ export default {
 .links__right {
   flex-basis: 50%;
   width: 100%;
-  padding: 2rem;
+  padding: 1.5rem 2rem;
   position: relative;
+
+  @include sm {
+    padding: 1.5rem;
+  }
 }
 
 .links__left {
@@ -92,7 +96,8 @@ export default {
   display: inline-block;
 
   &--left {
-    margin-left: 8rem;
+    text-align: right;
+    display: block;
 
     @include xl {
       display: block;
@@ -115,7 +120,7 @@ export default {
 
 .links__image-right {
   position: absolute;
-  right: 1rem;
+  right: 0.6rem;
   bottom: 30px;
   height: 181px;
   z-index: 0;
@@ -130,6 +135,10 @@ export default {
   left: 25px;
   bottom: 30px;
   height: 181px;
+
+  @include sm {
+    left: 15px;
+  }
 }
 
 .links__image-left,
@@ -153,7 +162,7 @@ export default {
   margin-bottom: 1rem;
 
   @include xl {
-    width: 170px;
+    width: 171px;
 
     &:first-child {
       margin-left: auto;

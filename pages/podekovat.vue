@@ -59,7 +59,7 @@ export default {
         return
       }
 
-      this.$router.push(`/sbirka/odeslano?shortId=${data.data.shortId}&id=${data.data.id}`)
+      this.$router.push(`/pomahame/odeslano?shortId=${data.data.shortId}&id=${data.data.id}`)
     }
   }
 }
@@ -85,14 +85,14 @@ export default {
         :max-characters="maxTextLength"
         class="form__line"
         placeholder="Brácho, díky moc, že jsi se mnou po celý rok byl a že jsi mi pomohl vše zvládnout! Fanda"
-        label="(tvoje poděkování)"
+        label="(Tvoje poděkování)"
         :required="true"
       />
       <span v-if="error" class="form__error-msg">{{ error }}</span>
       <small class="form__recaptcha-terms">Stránku chrání reCAPTCHA. Platí <a href="https://policies.google.com/privacy" target="_blank">Ochrana soukromí</a> a&nbsp;<a href="https://policies.google.com/terms" target="_blank">Podmínky používání</a> Google.</small>
       <div class="form__line form__footer">
         <recaptcha @error="onError" @success="onSuccess" />
-        <button-text to="/sbirka" class="form__footer-item" type="orange">
+        <button-text to="/pomahame" class="form__footer-item" type="orange">
           Chci pouze podpořit sbírku
         </button-text>
         <form-button class="form__footer-item">
