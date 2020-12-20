@@ -69,7 +69,7 @@ export default {
       <div class="share-links">
         <ShareNetwork
           network="Facebook"
-          :url="`${fullUrl}/t/${thanksShortId}`"
+          :url="`${fullUrl}/t/${shortId}`"
           title="Díky 2020"
           tag="a"
           class="share-links__item"
@@ -79,7 +79,7 @@ export default {
         </ShareNetwork>
         <ShareNetwork
           network="Twitter"
-          :url="`${fullUrl}/t/${thanksShortId}`"
+          :url="`${fullUrl}/t/${shortId}`"
           title="Díky 2020"
           class="share-links__item"
           @click.prevent.native=""
@@ -88,7 +88,7 @@ export default {
         </ShareNetwork>
         <ShareNetwork
           network="SMS"
-          :url="`${fullUrl}/t/${thanksShortId}`"
+          :url="`${fullUrl}/t/${shortId}`"
           title="Díky 2020"
           class="share-links__item"
           @click.prevent.native=""
@@ -97,7 +97,7 @@ export default {
         </ShareNetwork>
         <ShareNetwork
           network="Email"
-          :url="`${fullUrl}/t/${thanksShortId}`"
+          :url="`${fullUrl}/t/${shortId}`"
           title="Díky 2020"
           class="share-links__item"
           @click.prevent.native=""
