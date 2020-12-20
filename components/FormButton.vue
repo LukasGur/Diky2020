@@ -3,7 +3,7 @@
     :is="elementType"
     :to="to"
     class="button"
-    :class="[type ? 'button--'+type : '']"
+    :class="[type ? 'button--'+type : '', uppercase ? 'button--uppercase' : '']"
     :target="blank ? '_blank' : ''"
     :href="href"
   >
@@ -33,6 +33,11 @@ export default {
       type: Boolean,
       required: false,
       default: null
+    },
+    uppercase: {
+      type: Boolean,
+      required: false,
+      default: true
     }
   },
   computed: {
@@ -59,11 +64,12 @@ export default {
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
-  text-transform: uppercase;
   letter-spacing: 2.4px;
   font-size: 12px;
   font-weight: bold;
   transition: 0.2s;
+  text-align: center;
+  text-transform: none;
 
   @include xs {
     padding: 16px 30px;
@@ -72,17 +78,16 @@ export default {
   &:hover {
     background-color: $orange-dark;
   }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
 }
 
 .button--primary-outline {
   color: $orange;
   background-color: $white;
   border: 1px solid $orange;
-  padding: 17px 45px;
-
-  @include xs {
-    padding: 17px 31px;
-  }
 
   &:hover {
     background-color: $orange-light-2;

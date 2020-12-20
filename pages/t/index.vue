@@ -35,6 +35,18 @@ export default {
       const splitUrl = window.location.href.split('/')
       this.fullUrl = splitUrl[0] + '//' + splitUrl[2]
       this.url = splitUrl[2]
+    },
+    async copyToClipboard (url) {
+      await this.$copyText(url)
+      const btn = document.getElementById('copy')
+      btn.innerHTML = 'Zkopírováno'
+      btn.classList.remove('button--primary-outline')
+      btn.disabled = true
+      setTimeout(() => {
+        btn.classList.add('button--primary-outline')
+        btn.innerHTML = `${this.url}/t?id=${this.shortId}`
+        btn.disabled = false
+      }, 1000)
     }
   }
 }
@@ -50,7 +62,7 @@ export default {
       </div>
       <div class="thanks-link">
         <span class="thanks-link__text">Sdílej poděkování:</span>
-        <form-button :href="fullUrl + '/t?id=' + shortId" type="primary-outline" :blank="true">
+        <form-button id="copy" :uppercase="false" type="primary-outline" @click.prevent.native="copyToClipboard(fullUrl + '/t?id=' + shortId)">
           {{ url }}/t?id={{ shortId }}
         </form-button>
       </div>
