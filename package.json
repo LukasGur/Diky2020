@@ -15,16 +15,20 @@
     "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/recaptcha": "^0.6.2",
     "core-js": "^3.6.5",
-    "nuxt": "^2.14.6"
+    "nuxt": "^2.14.6",
+    "vue-social-sharing": "^3.0.4"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.1.0",
     "@nuxtjs/eslint-module": "^2.0.0",
     "@nuxtjs/style-resources": "^1.0.0",
+    "autoprefixer": "^9.8.6",
     "babel-eslint": "^10.1.0",
+    "cssnano": "^4.1.10",
     "eslint": "^7.10.0",
     "eslint-plugin-nuxt": "^1.0.0",
     "node-sass": "^5.0.0",
+    "postcss": "^8.2.1",
     "sass-loader": "^10.1.0"
   }
 }

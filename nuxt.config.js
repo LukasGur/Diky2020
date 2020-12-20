@@ -43,7 +43,8 @@ export default {
     '@nuxtjs/style-resources',
     '@nuxtjs/axios',
     '@nuxt/content',
-    '@nuxtjs/recaptcha'
+    '@nuxtjs/recaptcha',
+    'vue-social-sharing/nuxt'
   ],
 
   recaptcha: {
@@ -67,6 +68,14 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+    postcss: {
+      plugins: {
+        autoprefixer: {
+          flexbox: true
+        },
+        cssnano: {}
+      }
+    }
   },
 
   generate: {
