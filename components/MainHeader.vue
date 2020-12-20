@@ -97,7 +97,6 @@ export default {
 
 .header__right {
   text-align: right;
-  position: relative;
 }
 
 .header__logo {
@@ -121,6 +120,10 @@ export default {
   }
 }
 
+.wrapper-top {
+  position: relative;
+}
+
 .wrapper-bottom {
   @include lg {
     flex-direction: column;
@@ -129,12 +132,13 @@ export default {
 
 .header__nav {
   position: absolute;
-  width: 100vw;
+  left: 0;
   right: 0;
+  margin: auto;
   bottom: -2rem;
 
-  @include xs {
-    right: -0.1rem
+  @include sm {
+    text-align: center;
   }
 }
 
@@ -149,11 +153,13 @@ export default {
   }
 
   @include sm {
-    margin-left: 1rem;
+    margin-left: 0;
+    &:nth-child(2){
+      margin: 0 1rem;
+    }
   }
 
   @include xs {
-    margin-left: 0.2rem;
   }
 
   &.nuxt-link-active {
