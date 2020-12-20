@@ -177,10 +177,11 @@ export default {
 
   @include sm {
     font-size: 30px;
-    max-width: 260px;
+    width: 230px;
   }
 
   @include xs {
+    width: inherit;
     font-size: 24px;
     max-width: 200px;
   }
