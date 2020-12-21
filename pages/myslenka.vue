@@ -11,6 +11,7 @@ export default {
 <template>
   <div class="container">
     <nuxt-content :document="content" />
+    <call-to-action />
   </div>
 </template>
 
