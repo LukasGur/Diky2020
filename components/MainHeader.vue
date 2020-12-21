@@ -52,7 +52,7 @@ export default {
           </h1>
           <nav class="header__nav">
             <nuxt-link class="header__link" to="/podekovat">
-              Napsat poděkování
+              Tvoje poděkování
             </nuxt-link>
             <nuxt-link class="header__link" to="/pomahame">
               Pomáháme

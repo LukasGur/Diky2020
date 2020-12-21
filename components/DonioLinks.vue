@@ -42,7 +42,7 @@ export default {
             Podpořit
           </form-button>
         </div>
-        <img class="links__image-right" src="/samozivitelka.svg" alt="matka s dítětem">
+        <img class="links__image-right" src="/mama-a-dite-transparent.png" alt="matka s dítětem">
       </div>
     </div>
     <p class="signature">
@@ -142,8 +142,8 @@ export default {
 .links__image-left {
   position: absolute;
   left: 25px;
-  bottom: 30px;
-  height: 181px;
+  bottom: 20px;
+  width: 108.8px;
 
   @include sm {
     left: 15px;

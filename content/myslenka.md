@@ -1,5 +1,5 @@
 ---
-title: O projektu
+title: 'Myšlenka #Diky2020'
 ---
 Rok 2020 pravděpodobně nepatří k těm, na které budeme jednou rádi vzpomínat. Prožili jsme období velké nejistoty, dobu, která není lehká pro nikoho a která zasahuje do osobního i pracovního života každého z nás. Nejednou jsme museli čelit situacím, na které jsme doposud nebyli zvyklí. O to obdivuhodnější je, jak jsme se s nimi dokázali vypořádat. Jako jednotlivci, jako společnost. Díky tomu se 2020 stal také rokem drobných radostí, laskavé starostlivosti a pomoci.
 

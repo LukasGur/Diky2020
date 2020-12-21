@@ -19,13 +19,13 @@ export default {
 .nuxt-content {
   h2 {
     font-weight: 800;
-    font-size: 1.7rem;
-    margin-top: 2rem;
+    margin-top: 3.2rem;
+    font-size: 2.4rem;
     margin-bottom: 1.2rem;
 
     @include lg {
-      margin-top: 3.2rem;
-      font-size: 2.4rem;
+      font-size: 1.7rem;
+      margin-top: 2rem;
     }
 
     a {
@@ -35,25 +35,28 @@ export default {
 
   h3 {
     font-weight: 700;
-    font-size: 1.4rem;
-    margin-top: 2rem;
-    margin-bottom: 0.7rem;
+    margin-top: 3.2rem;
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
     @include lg {
-      margin-top: 3.2rem;
-      font-size: 1.8rem;
-      margin-bottom: 1.2rem;
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      margin-bottom: 0.7rem;
     }
   }
 
   p {
-    font-size: 1.2rem;
-    line-height: 1.9rem;
+    margin-bottom: 1.8rem;
+    font-size: 1.5rem;
+    line-height: 2.25rem;
     margin-top: 0;
     margin-bottom: 1.3rem;
+
     @include lg {
-      margin-bottom: 1.8rem;
-      font-size: 1.5rem;
-      line-height: 2.25rem;
+      font-size: 1.2rem;
+      line-height: 1.9rem;
+      margin-top: 0;
+      margin-bottom: 1.3rem;
     }
   }
 
@@ -80,9 +83,9 @@ export default {
     line-height: 1.3rem;
     border-radius: 8px;
     padding: 1rem;
-    margin-bottom: 1.3rem;
+    margin-bottom: 1.8rem;
     @include lg {
-      margin-bottom: 1.8rem;
+      margin-bottom: 1.3rem;
     }
 
     code {
@@ -94,20 +97,20 @@ export default {
   ul,
   ol {
     font-size: 1.5rem;
-    margin-left: 1.75rem;
-    margin-bottom: 1.5rem;
+    margin-left: 3rem;
+    margin-bottom: 2rem;
     @include lg {
-      margin-left: 3rem;
-      margin-bottom: 2rem;
+      margin-left: 1.75rem;
+      margin-bottom: 1.5rem;
     }
 
     li {
-      font-size: 1.2rem;
-      line-height: 1.9rem;
       margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+      line-height: 2.25rem;
       @include lg {
-        font-size: 1.5rem;
-        line-height: 2.25rem;
+        font-size: 1.2rem;
+        line-height: 1.9rem;
       }
     }
   }
