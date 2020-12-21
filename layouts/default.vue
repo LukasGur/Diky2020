@@ -14,9 +14,16 @@
   font-family: $font-primary
 }
 
+body {
+  min-height: 100vh;
+}
+
 #web {
   color: $black;
   overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {

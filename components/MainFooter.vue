@@ -34,6 +34,7 @@ export default {
   background-color: $yellow-light;
   color: $black;
   padding: 1.5rem 0;
+  margin-top: auto;
 }
 
 .footer__wrapper {
