@@ -52,8 +52,11 @@ export default {
     '@nuxt/content',
     '@nuxtjs/recaptcha',
     'vue-social-sharing/nuxt',
-    'nuxt-clipboard2',
-    '@nuxtjs/google-analytics'
+    'nuxt-clipboard2'
+  ],
+
+  plugins: [
+    { src: './plugins/vue-gtag.js', mode: 'client' }
   ],
 
   recaptcha: {
@@ -78,9 +81,5 @@ export default {
         cssnano: {}
       }
     }
-  },
-
-  googleAnalytics: {
-    id: 'G-SZBQ10T4S8'
   }
 }
