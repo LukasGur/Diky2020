@@ -1,7 +1,9 @@
 <script>
 export default {
-  asyncData ({ store }) {
-    store.commit('setNewMainTitle', 'Podpoř sbírku samoživitelům')
+  async asyncData ({ $content, store }) {
+    const content = await $content('pomahame').fetch()
+    store.commit('setNewMainTitle', content.title)
+    return { content }
   },
   data () {
     return {
@@ -42,6 +44,7 @@ export default {
       </div>
     </div>
     <donio-links :thanks-id="thanksId" class="donio-link" />
+    <nuxt-content :document="content" />
   </div>
 </template>
 

@@ -46,7 +46,7 @@ export default {
         </button-text>
       </div>
       <div v-if="data.donation" class="card__subsidy">
-        <span class="card__subsidy--text">{{ data.name }} přispěl <strong>{{ data.donation.amount }} Kč</strong> {{ data.donation.target }}</span>
+        <span class="card__subsidy--text">{{ data.name }} přispěl <strong>{{ data.donation.amount }} Kč</strong> {{ data.donation.target }}.</span>
       </div>
     </div>
   </div>

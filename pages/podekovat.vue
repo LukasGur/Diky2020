@@ -58,13 +58,14 @@ export default {
       }
       const response = await fetch('https://api.diky2020.cz/thanks/', requestOptions)
       const data = await response.json()
-      this.loading = false
       if (data.status === 'ERR') {
         this.error = data.msg
+        this.loading = false
         return
       }
 
       this.$router.push(`/pomahame/odeslano?shortId=${data.data.shortId}&id=${data.data.id}`)
+      this.loading = false
     }
   }
 }
@@ -102,7 +103,7 @@ export default {
         </button-text>
         <form-button class="form__footer-item">
           <span v-if="loading">
-            Odesílání...
+            Nahrávání...
           </span>
           <span v-else>
             Odeslat poděkování

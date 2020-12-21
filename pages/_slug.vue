@@ -65,7 +65,7 @@ export default {
       <div class="thanks-link">
         <span class="thanks-link__text">Sdílej poděkování:</span>
         <form-button id="copy" :uppercase="false" type="primary-outline" @click.prevent.native="copyToClipboard(fullUrl + '/' + shortId)">
-          {{ url }}/{{ shortId }}
+          <span class="uppercase">{{ url }}</span>/{{ shortId }}
         </form-button>
       </div>
       <div class="share-links">
@@ -174,7 +174,10 @@ export default {
 .share-links {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 .share-links__item {
@@ -184,6 +187,12 @@ export default {
   cursor: pointer;
   margin: 0 1rem;
   margin-bottom: 2rem;
+
+  @media (max-width: 400px) {
+    font-size: 2.3rem;
+    margin: 0 0.6rem;
+    margin-bottom: 2rem;
+  }
 }
 
 .icon--facebook {
