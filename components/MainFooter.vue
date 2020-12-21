@@ -11,8 +11,8 @@ export default {
 <template>
   <footer class="footer container">
     <div class="footer__wrapper">
-      <a href="mailto:info@diky2020.cz" class="mail-link">
-        <i class="icon icon--email" />info<span class="copyright__icon">@</span>diky2020.cz
+      <a href="mailto:dotazy@diky2020.cz" class="mail-link">
+        <i class="icon icon--email" />dotazy<span class="copyright__icon">@</span>diky2020.cz
       </a>
       <div class="copyright">
         <span class="copyright__icon">&copy;</span> {{ year }} Diky2020.cz
@@ -93,7 +93,7 @@ export default {
   text-decoration: none;
   transition: 0.2s;
   z-index: 1;
-  border-bottom: 1px solid $black;
+  border-bottom: 1px solid transparent;
 
   &:hover {
     color: $orange;

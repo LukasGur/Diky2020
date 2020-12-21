@@ -1,5 +1,5 @@
 ---
-title: Podpoř sbírku samoživitelům
+title: Komu pomáháme?
 ---
 ## Senioři
 Senioři kvůli uzavření domovů trpí samotou a odloučením, které mají negativní dopad na jejich fyzické zdraví i psychiku. Odloučení od blízkých může mít na seniory stejně vážné důsledky jako možná nákaza nemocí COVID-19, absence sociálního kontaktu totiž zvyšuje riziko úmrtnosti až o polovinu. Nadace Krása pomoci už 12 let pomáhá seniorům, aby mohli žít důstojný život. S vaší pomocí dokážeme ulehčit babičkám a dědečkům situaci, do které se nyní dostávají doma i v ústavních zařízeních.
