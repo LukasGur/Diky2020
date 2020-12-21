@@ -1,3 +1,4 @@
+/* eslint-disable vue/valid-v-bind */
 <script>
 export default {
   props: {
@@ -5,6 +6,14 @@ export default {
       type: String,
       required: false,
       default: null
+    }
+  },
+  methods: {
+    redirectUrl (code) {
+      if (this.thanksId) {
+        return `https://www.donio.cz/prispevek/${code}?utm_medium=referral&utm_source=Diky2020.cz&utm_campaign=Diky2020&diky2020Id=${this.thanksId}`
+      }
+      return ` https://www.donio.cz/prispevek/${code}?utm_medium=referral&utm_source=Diky2020.cz&utm_campaign=Diky2020NoThanks`
     }
   }
 }
@@ -19,7 +28,7 @@ export default {
           <h3 class="links__title">
             Podpořím seniory.
           </h3>
-          <form-button :href="'https://www.doniodev.cz/prispevek/730?utm_medium=referral&utm_source=Diky2020.cz&utm_campaign=Diky2020&diky2020Id=' + thanksId" :blank="true">
+          <form-button :href="redirectUrl('000851')" :blank="true">
             Podpořit
           </form-button>
         </div>
@@ -29,7 +38,7 @@ export default {
           <h3 class="links__title">
             Podpořím samoživitele.
           </h3>
-          <form-button :href="'https://www.doniodev.cz/prispevek/730?utm_medium=referral&utm_source=Diky2020.cz&utm_campaign=Diky2020&diky2020Id=' + thanksId" :blank="true" type="primary-outline">
+          <form-button :href="redirectUrl('000852')" :blank="true" type="primary-outline">
             Podpořit
           </form-button>
         </div>
