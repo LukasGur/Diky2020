@@ -35,23 +35,21 @@ export default {
 <template>
   <div class="container">
     <loading-bar v-show="$fetchState.pending" />
-    <div v-show="thanksArray.length > 4">
-      <div class="thanks__container">
-        <thanks-card v-for="thanks in thanksArray.slice(0, 4)" :key="thanks.id" :data="thanks" class="thanks__item" />
+    <div class="thanks__container">
+      <thanks-card v-for="thanks in thanksArray.slice(0, 4)" :key="thanks.id" :data="thanks" class="thanks__item" />
+    </div>
+    <call-to-action v-show="thanksArray.length > 4" />
+    <div class="thanks__container">
+      <thanks-card v-for="thanks in thanksArray.slice(4)" :key="thanks.id" :data="thanks" class="thanks__item" />
+    </div>
+    <div class="thanks__end">
+      <div v-if="lastThanks">
+        <span class="thanks__end-text">Žádná další poděkování.</span>
+        <call-to-action />
       </div>
-      <call-to-action />
-      <div class="thanks__container">
-        <thanks-card v-for="thanks in thanksArray.slice(4)" :key="thanks.id" :data="thanks" class="thanks__item" />
-      </div>
-      <div class="thanks__end">
-        <div v-if="lastThanks">
-          <span class="thanks__end-text">Žádná další poděkování.</span>
-          <call-to-action />
-        </div>
-        <form-button v-else type="primary-outline" @click.native="$fetch">
-          Další poděkování
-        </form-button>
-      </div>
+      <form-button v-show="thanksArray.length > 4" v-else type="primary-outline" @click.native="$fetch">
+        Další poděkování
+      </form-button>
     </div>
     <error-msg v-if="error" :error="error" />
   </div>
