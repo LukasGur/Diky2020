@@ -81,7 +81,7 @@ export default {
   },
 
   googleAnalytics: {
-    id: 'G-3ZKQ1FP7VX',
+    id: 'G-SZBQ10T4S8',
     checkDuplicatedScript: true
   }
 }
