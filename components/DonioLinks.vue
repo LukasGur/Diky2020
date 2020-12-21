@@ -23,7 +23,7 @@ export default {
   <div class="wrapper">
     <div class="links__wrapper">
       <div class="links__left">
-        <img class="links__image-left" src="/hp-banner-illustration-left.png" alt="pán starající se o seniorku">
+        <img class="links__image-left" src="/senior.png" alt="pán starající se o seniorku">
         <div class="link__box link__box--left">
           <h3 class="links__title">
             Podpořím seniory.
@@ -42,7 +42,7 @@ export default {
             Podpořit
           </form-button>
         </div>
-        <img class="links__image-right" src="/mama-a-dite-transparent.png" alt="matka s dítětem">
+        <img class="links__image-right" src="/samozivitelka.svg" alt="matka s dítětem">
       </div>
     </div>
     <p class="signature">
@@ -107,9 +107,14 @@ export default {
   &--left {
     text-align: right;
     display: block;
+    margin-right: 4rem;
 
     @include xl {
-      display: block;
+      margin-right: 2.5rem;
+    }
+
+    @include lg {
+      margin-right: 0;
     }
 
     @include md {
@@ -170,26 +175,27 @@ export default {
   font-size: 1.75rem;
   margin-bottom: 1rem;
 
-  @include xl {
+  @include lg {
     width: 171px;
+  }
 
-    &:first-child {
+  &:first-child {
+    margin-left: auto;
+
+    @include md {
+      width: 171px;
+      margin-left: 0;
+      text-align: left;
+    }
+
+    @include sm {
       margin-left: auto;
+      text-align: right;
+    }
 
-      @include md {
-        margin-left: 0;
-        text-align: left;
-      }
-
-      @include sm {
-        margin-left: auto;
-        text-align: right;
-      }
-
-      @include xs {
-        margin-left: 0;
-        text-align: left;
-      }
+    @include xs {
+      margin-left: 0;
+      text-align: left;
     }
   }
 }

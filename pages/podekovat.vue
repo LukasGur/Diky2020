@@ -59,8 +59,8 @@ export default {
       const response = await fetch('https://api.diky2020.cz/thanks/', requestOptions)
       const data = await response.json()
       if (data.status === 'ERR') {
-        this.error = data.msg
         this.loading = false
+        this.error = data.msg
         return
       }
 
