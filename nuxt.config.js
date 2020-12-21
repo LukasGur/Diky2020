@@ -43,8 +43,7 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module',
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/eslint-module'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -53,7 +52,8 @@ export default {
     '@nuxt/content',
     '@nuxtjs/recaptcha',
     'vue-social-sharing/nuxt',
-    'nuxt-clipboard2'
+    'nuxt-clipboard2',
+    '@nuxtjs/google-analytics'
   ],
 
   recaptcha: {
@@ -81,7 +81,6 @@ export default {
   },
 
   googleAnalytics: {
-    id: 'G-SZBQ10T4S8',
-    checkDuplicatedScript: true
+    id: 'G-SZBQ10T4S8'
   }
 }
