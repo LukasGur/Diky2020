@@ -9,8 +9,8 @@ export default {
 </script>
 
 <template>
-  <footer class="footer">
-    <div class="container footer__wrapper">
+  <footer class="footer container">
+    <div class="footer__wrapper">
       <a href="mailto:info@diky2020.cz" class="mail-link">
         <i class="icon icon--email" />info<span class="copyright__icon">@</span>diky2020.cz
       </a>
@@ -28,13 +28,18 @@ export default {
 <style lang="scss" scoped>
 .container {
   padding: 0;
+
+  @include md {
+    width: 100%;
+  }
 }
 
 .footer {
   background-color: $yellow-light;
   color: $black;
-  padding: 1.5rem 0;
+  padding: 1.5rem 2rem;
   margin-top: auto;
+  border-radius: 5px 5px 0 0;
 }
 
 .footer__wrapper {
