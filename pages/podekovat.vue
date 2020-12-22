@@ -16,11 +16,10 @@ export default {
   },
   mounted () {
     this.image = new File([''], '')
+    this.$refs.inputFocus.$el.focus()
   },
   methods: {
     onError (error) {
-      // eslint-disable-next-line no-console
-      console.log('Error happened:', error)
       this.loading = false
       this.error = error
     },
@@ -32,10 +31,8 @@ export default {
         await this.$recaptcha.getResponse()
         await this.$recaptcha.reset()
       } catch (error) {
-        // eslint-disable-next-line no-console
-        console.log('Login error:', error)
-        this.loading = false
         this.error = error
+        this.loading = false
       }
     },
     async onSuccess (token) {
@@ -82,7 +79,7 @@ export default {
       @submit.prevent="onSubmit"
     >
       <div class="form__line form__group">
-        <form-input v-model="name" placeholder="František" label="Jmenuji se" :required="true" />
+        <form-input ref="inputFocus" v-model="name" placeholder="František" label="Jmenuji se" :required="true" />
         <form-input v-model="addressee" placeholder="Petrovi, taťkovi, zdravotníkům..." label="a chci poděkovat" :required="true" />
         <form-upload-file v-model="image" />
       </div>
