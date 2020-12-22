@@ -12,14 +12,14 @@ export default {
   <footer class="footer container">
     <div class="footer__wrapper">
       <a href="mailto:dotazy@diky2020.cz" class="mail-link">
-        <i class="icon icon--email" />dotazy<span class="copyright__icon">@</span>diky2020.cz
+        dotazy<span class="copyright__icon">@</span>diky2020.cz
       </a>
       <div class="copyright">
         <span class="copyright__icon">&copy;</span> {{ year }} Diky2020.cz
       </div>
       <a href="https://noltio.com/" class="noltio__link">
         Vyvinulo
-        <img class="notlio__logo" src="/noltio-logo.png" alt="Logo firmy Noltio, s.r.o.">Noltio
+        <img class="notlio__logo" src="/noltio-logo.png" alt="Logo firmy Noltio, s.r.o.">
       </a>
     </div>
   </footer>
@@ -37,9 +37,10 @@ export default {
 .footer {
   background-color: $yellow-light;
   color: $black;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 2.7rem;
   margin-top: auto;
   border-radius: 5px 5px 0 0;
+  font-weight: bold;
 }
 
 .footer__wrapper {
@@ -47,10 +48,9 @@ export default {
   justify-content: space-between;
   align-items: center;
   position: relative;
-  padding-right: 2.4rem;
   font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
 
   @include sm {
     flex-direction: column;
@@ -59,31 +59,11 @@ export default {
       margin-bottom: 0.7rem;
     }
   }
-
-  &::after {
-    content: '';
-    background-image: url('/darce-pulka.svg');
-    height: 100px;
-    width: 70px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: absolute;
-    bottom: -4.25rem;
-    right: 0;
-    transform: rotateY(180deg);
-    z-index: 0;
-
-    @include sm {
-      bottom: -2.7rem;
-    }
-  }
 }
 
 .notlio__logo {
-  height: 0.9em;
-  margin-right: 2px;
-  margin-left: 2px;
-  top: 1px;
+  height: 12px;
+  top: 2px;
   position: relative;
 }
 
@@ -96,13 +76,9 @@ export default {
   border-bottom: 1px solid transparent;
 
   &:hover {
-    color: $orange;
-    border-bottom: 1px solid $orange;
+    color: $orange-dark;
+    border-bottom: 1px solid $orange-dark;
   }
-}
-
-.mail-link {
-  padding-left: 4px;
 }
 
 .icon--email {

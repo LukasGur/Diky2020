@@ -11,7 +11,7 @@ export default {
         }
       })
     } catch (error) {
-      this.error = 'Vyskytla se chyba na naší straně a pokoušíme se ji co nejrychleji opravit.'
+      this.error = 'Chyba na naší straně, nebo špatné připojení k internetu.'
     }
   },
   fetchDelay: 0,
