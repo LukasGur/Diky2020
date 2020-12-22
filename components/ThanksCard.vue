@@ -85,9 +85,10 @@ export default {
   background-color: $orange-light;
   position: relative;
   bottom: 0;
-  padding: 1.5rem 2rem;
+  padding: 1.1rem 2rem;
   border-radius: 0 0 1rem 1rem;
   position: relative;
+  font-size: 0.8rem;
 
   &::before {
     content: '';
@@ -96,8 +97,8 @@ export default {
     background-repeat: no-repeat;
     background-size: contain;
     display: block;
-    height: 72px;
-    width: 65px;
+    height: 57px;
+    width: 57px;
     bottom: 0;
 
     @include xs {
@@ -106,7 +107,7 @@ export default {
   }
 
   &--text {
-    margin-left: 5rem;
+    margin-left: 4.2rem;
     display: block;
 
     @include xs {
