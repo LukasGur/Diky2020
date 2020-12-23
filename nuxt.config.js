@@ -46,6 +46,10 @@ export default {
     '@nuxtjs/eslint-module'
   ],
 
+  router: {
+    prefetchLinks: false
+  },
+
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     '@nuxtjs/style-resources',
