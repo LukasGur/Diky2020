@@ -51,9 +51,12 @@ export default {
             {{ mainTitle }}
           </h1>
           <nav class="header__nav">
-            <nuxt-link class="header__link" to="/podekovat">
+            <!-- <nuxt-link class="header__link" to="/podekovat">
               Napiš poděkování
-            </nuxt-link>
+            </nuxt-link> -->
+            <form-button to="/podekovat" class="header__CTA">
+              Napiš poděkování
+            </form-button>
             <nuxt-link class="header__link" to="/pomahame">
               Pomáháme
             </nuxt-link>
@@ -85,6 +88,16 @@ export default {
   padding-top: 4rem;
   padding-bottom: 3rem;
   box-shadow: 0 3rem 2rem 0rem #fff9ef23;
+
+  @include lg {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+
+  @include md {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
 }
 
 .header__main {
@@ -92,6 +105,10 @@ export default {
 
   @include lg {
     padding-bottom: 4rem;
+  }
+
+  @include sm {
+    padding-bottom: 6rem;
   }
 }
 
@@ -139,6 +156,7 @@ export default {
 
   @include sm {
     text-align: center;
+    bottom: -4.8rem;
   }
 }
 
@@ -154,16 +172,22 @@ export default {
 
   @include sm {
     margin-left: 0;
-    &:nth-child(2){
-      margin: 0 1rem;
+    &:last-child {
+      margin-left: 2rem;
     }
-  }
-
-  @include xs {
   }
 
   &.nuxt-link-active {
     text-shadow: -0.06ex 0 $black, 0.06ex 0 $black;
+  }
+}
+
+.header__CTA {
+  padding: 0.5rem 0.8rem;
+
+  @include sm {
+    margin-bottom: 1.3rem;
+    display: block;
   }
 }
 
