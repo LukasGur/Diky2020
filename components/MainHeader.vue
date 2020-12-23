@@ -183,12 +183,12 @@ export default {
 }
 
 .header__CTA {
-  padding: 0.5rem 0.8rem;
+  padding: 0.5rem 0.8rem !important;
 
   @include sm {
-    padding: 0.8rem 0.8rem;
+    padding: 0.8rem 0.8rem !important;
     margin-bottom: 1.1rem;
-    display: block;
+    display: block !important;
   }
 }
 
