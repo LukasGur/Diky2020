@@ -156,7 +156,7 @@ export default {
 
   @include sm {
     text-align: center;
-    bottom: -4.8rem;
+    bottom: -5rem;
   }
 }
 
@@ -186,7 +186,8 @@ export default {
   padding: 0.5rem 0.8rem;
 
   @include sm {
-    margin-bottom: 1.3rem;
+    padding: 0.8rem 0.8rem;
+    margin-bottom: 1.1rem;
     display: block;
   }
 }
