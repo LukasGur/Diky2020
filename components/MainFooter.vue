@@ -19,7 +19,7 @@ export default {
       </div>
       <a href="https://noltio.com/" class="noltio__link">
         Vyvinulo
-        <img class="notlio__logo" src="/noltio-logo.png" alt="Logo firmy Noltio, s.r.o.">
+        <img class="notlio__logo" width="379px" height="377px" src="/noltio-logo.png" alt="Logo firmy Noltio, s.r.o.">
       </a>
     </div>
   </footer>
@@ -63,6 +63,7 @@ export default {
 
 .notlio__logo {
   height: 12px;
+  width: auto;
   top: 2px;
   position: relative;
 }

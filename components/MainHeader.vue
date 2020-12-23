@@ -42,7 +42,7 @@ export default {
   <header class="header">
     <div class="header__main">
       <div class="container wrapper wrapper-top">
-        <nuxt-link to="/">
+        <nuxt-link to="/" aria-label="Logo">
           <div class="header__logo" />
         </nuxt-link>
 

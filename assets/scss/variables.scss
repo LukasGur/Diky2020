@@ -24,6 +24,7 @@ $font-second: Newzald;
          url($font-file+'.svg#'+$font-family) format('svg');
     font-weight: $weight;
     font-style: $style;
+    font-display: swap;
   }
 }
 
