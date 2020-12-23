@@ -92,7 +92,7 @@ export default {
         :required="true"
       />
       <span v-if="error" class="form__error-msg">{{ error }}</span>
-      <small class="form__recaptcha-terms">Stránku chrání reCAPTCHA. Platí <a href="https://policies.google.com/privacy" target="_blank">Ochrana soukromí</a> a&nbsp;<a href="https://policies.google.com/terms" target="_blank">Podmínky používání</a> Google.</small>
+      <small class="form__recaptcha-terms">Stránku chrání reCAPTCHA. Platí <a href="https://policies.google.com/privacy" rel="noopener" target="_blank">Ochrana soukromí</a> a&nbsp;<a href="https://policies.google.com/terms" rel="noopener" target="_blank">Podmínky používání</a> Google.</small>
       <div class="form__line form__footer">
         <recaptcha @error="onError" @success="onSuccess" />
         <button-text to="/pomahame" class="form__footer-item" type="orange">
