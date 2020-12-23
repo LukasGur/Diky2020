@@ -1,9 +1,9 @@
 export default {
   target: 'static',
-  // server: {
-  //   port: 8000,
-  //   host: '0.0.0.0'
-  // },
+  server: {
+    port: 8000,
+    host: '0.0.0.0'
+  },
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: 'Díky 2020 | Poděkuj a šiř pozitivní náladu',
@@ -19,12 +19,12 @@ export default {
       { hid: 'twitter:image', name: 'twitter:image', content: '/Komu_za_rok_2020_poděkujete_vy.png' },
       { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: 'Díky za krásné léto, lásko. | Děkuji Martine, že jsi mi pomohl v nové práci. | A komu popřejete vy?' },
       { hid: 'og:title', property: 'og:title', content: 'Díky 2020!' },
-      { hid: 'og:image', property: 'og:image', content: '/Komu_za_rok_2020_poděkujete_vy.png' },
+      { hid: 'og:image', property: 'og:image', content: 'https://diky2020.cz/Komu_za_rok_2020_pod%C4%9Bkujete_vy.png' },
       { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: '/Komu_za_rok_2020_poděkujete_vy.png' },
       { hid: 'og:image:alt', property: 'og:image:alt', content: 'Díky za krásné léto, lásko. | Děkuji Martine, že jsi mi pomohl v nové práci. | A komu popřejete vy?' },
       { hid: 'og:image:type', property: 'og:image:type', content: 'image/png' },
-      { hid: 'og:image:width', property: 'og:image:width', content: '940' },
-      { hid: 'og:image:height', property: 'og:image:height', content: '788' }
+      { hid: 'og:image:width', property: 'og:image:width', content: '1200' },
+      { hid: 'og:image:height', property: 'og:image:height', content: '628' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
