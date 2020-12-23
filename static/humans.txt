@@ -1,0 +1,14 @@
+concept & UX: František Soudek
+  - LinkedIn: https://www.linkedin.com/in/franti%C5%A1ek-soudek-1990a8149/
+backend:
+  - Name: Jan Švábík
+  - GitHub: https://github.com/jansvabik
+  - LinkedIn: https://www.linkedin.com/in/jansvabik/
+  - Page: https://jansvabik.cz/
+frontend:
+  - Name: Lukáš Gurecký
+  - GitHub: https://github.com/LukasGur
+  - LinkedIn: https://www.linkedin.com/in/lukasgur/
+illustrations & texts:
+  - Name: Donio It
+  - Page: https://www.donio.cz/
