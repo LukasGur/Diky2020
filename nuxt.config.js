@@ -23,8 +23,8 @@ export default {
       { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: '/Komu_za_rok_2020_poděkujete_vy.png' },
       { hid: 'og:image:alt', property: 'og:image:alt', content: 'Díky za krásné léto, lásko. | Děkuji Martine, že jsi mi pomohl v nové práci. | A komu popřejete vy?' },
       { hid: 'og:image:type', property: 'og:image:type', content: 'image/png' },
-      { hid: 'og:image:width', property: 'og:image:width', content: '940' },
-      { hid: 'og:image:height', property: 'og:image:height', content: '788' }
+      { hid: 'og:image:width', property: 'og:image:width', content: '1200' },
+      { hid: 'og:image:height', property: 'og:image:height', content: '628' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
