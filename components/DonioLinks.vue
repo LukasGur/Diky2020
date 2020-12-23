@@ -25,9 +25,9 @@ export default {
       <div class="links__left">
         <img class="links__image-left" src="/senior.png" alt="pán starající se o seniorku">
         <div class="link__box link__box--left">
-          <h3 class="links__title">
+          <h2 class="links__title">
             Podpořím seniory.
-          </h3>
+          </h2>
           <form-button :href="redirectUrl('000851')" :blank="true">
             Podpořit
           </form-button>
@@ -35,9 +35,9 @@ export default {
       </div>
       <div class="links__right">
         <div class="link__box link__box--right">
-          <h3 class="links__title">
+          <h2 class="links__title">
             Podpořím samoživitele.
-          </h3>
+          </h2>
           <form-button :href="redirectUrl('000852')" :blank="true" type="primary-outline">
             Podpořit
           </form-button>

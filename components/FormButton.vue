@@ -5,6 +5,7 @@
     class="button"
     :class="[type ? 'button--'+type : '', uppercase ? 'button--uppercase' : '']"
     :target="blank ? '_blank' : ''"
+    :rel="blank ? 'noopener' : ''"
     :href="href"
   >
     <slot />
