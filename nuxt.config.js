@@ -19,7 +19,7 @@ export default {
       { hid: 'twitter:image', name: 'twitter:image', content: '/Komu_za_rok_2020_poděkujete_vy.png' },
       { hid: 'twitter:image:alt', name: 'twitter:image:alt', content: 'Díky za krásné léto, lásko. | Děkuji Martine, že jsi mi pomohl v nové práci. | A komu popřejete vy?' },
       { hid: 'og:title', property: 'og:title', content: 'Díky 2020!' },
-      { hid: 'og:image', property: 'og:image', content: '/Komu_za_rok_2020_poděkujete_vy.png' },
+      { hid: 'og:image', property: 'og:image', content: 'https://diky2020.cz/Komu_za_rok_2020_pod%C4%9Bkujete_vy.png' },
       { hid: 'og:image:secure_url', property: 'og:image:secure_url', content: '/Komu_za_rok_2020_poděkujete_vy.png' },
       { hid: 'og:image:alt', property: 'og:image:alt', content: 'Díky za krásné léto, lásko. | Děkuji Martine, že jsi mi pomohl v nové práci. | A komu popřejete vy?' },
       { hid: 'og:image:type', property: 'og:image:type', content: 'image/png' },
