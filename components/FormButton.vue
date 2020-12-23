@@ -6,7 +6,7 @@
     :class="[type ? 'button--'+type : '', uppercase ? 'button--uppercase' : '']"
     :target="blank ? '_blank' : ''"
     :rel="blank ? 'noopener' : ''"
-    :href="href"
+    :href="href ? href : (to ? to : '')"
   >
     <slot />
   </component>
