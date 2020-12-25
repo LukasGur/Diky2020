@@ -1,4 +1,2 @@
 User-Agent: *
-Allow: /
-
-Sitemap: https://diky2020.cz/sitemap.xml
+Disallow: /_nuxt/
