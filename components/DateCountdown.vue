@@ -2,7 +2,7 @@
   <div v-if="days > 0">
     Zbývá <span>{{ days }}</span> dnů <span>{{ hours }}</span> hodin a&nbsp;<span>{{ minutes }}</span> minut
   </div>
-  <div v-else-if="second > 0">
+  <div v-else-if="seconds > 0">
     Zbývá <span>{{ hours }}</span> hodin <span>{{ minutes }}</span> minut a&nbsp;<span>{{ seconds }}</span> sekund
   </div>
   <div v-else>
