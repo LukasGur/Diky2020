@@ -1,25 +1,20 @@
 <script>
+import data from '@/assets/data.json'
+
 export default {
-  async fetch () {
-    try {
-      await fetch('https://api.diky2020.cz/welcome').then(res => res.json()).then((res) => {
-        this.totalThanks = new Intl.NumberFormat('cs-CZ').format(res.data.totalThanks)
-        this.totalDonated = new Intl.NumberFormat('cs-CZ').format(res.data.donated)
-        this.newYearDate = new Date(res.data.eventEnd).getTime()
-      })
-    } catch (error) {
-      this.error = 'Chyba na naší straně, nebo špatné připojení k internetu.'
-    }
-  },
   fetchDelay: 0,
   fetchOnServer: false,
   data () {
     return {
+      totalDonated: '126 957',
       mainTitle: null,
-      totalThanks: '---',
-      totalDonated: '---',
       newYearDate: 1609455599999,
       error: null
+    }
+  },
+  computed: {
+    totalThanks () {
+      return new Intl.NumberFormat('cs-CZ').format(data.length)
     }
   },
   watch: {
@@ -41,7 +36,7 @@ export default {
 <template>
   <header class="header">
     <div class="header__main">
-      <div class="container wrapper wrapper-top">
+      <div class="container wrapper">
         <nuxt-link to="/" aria-label="Logo">
           <div class="header__logo" />
         </nuxt-link>
@@ -51,9 +46,6 @@ export default {
             {{ mainTitle }}
           </h1>
           <nav class="header__nav">
-            <!-- <nuxt-link class="header__link" to="/podekovat">
-              Napiš poděkování
-            </nuxt-link> -->
             <form-button to="/podekovat" class="header__CTA">
               Napiš poděkování
             </form-button>
@@ -68,12 +60,9 @@ export default {
       </div>
     </div>
     <error-msg v-if="error" :error="error" />
-    <div class="container wrapper wrapper-bottom">
-      <date-countdown :count-down-date="newYearDate" class="header__info" />
-      <div class="header__info header__info--right">
-        <div>Sdíleno <span>{{ totalThanks }} poděkování</span></div>
-        <div>Darováno <span>{{ totalDonated }} Kč</span></div>
-      </div>
+    <div class="container wrapper header__info">
+      <div>Sdíleno <span>{{ totalThanks }} poděkování</span></div>
+      <div>Darováno <span>{{ totalDonated }} Kč</span></div>
     </div>
   </header>
 </template>
@@ -131,19 +120,10 @@ export default {
 .wrapper {
   display: flex;
   justify-content: space-between;
+  position: relative;
 
   &--header {
     align-items: center;
-  }
-}
-
-.wrapper-top {
-  position: relative;
-}
-
-.wrapper-bottom {
-  @include lg {
-    flex-direction: column;
   }
 }
 
@@ -238,14 +218,6 @@ export default {
 
   span {
     color: $orange;
-  }
-
-  &--right {
-    text-align: right;
-
-    @include lg {
-      text-align: inherit;
-    }
   }
 }
 

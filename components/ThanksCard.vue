@@ -16,6 +16,11 @@ export default {
       default: true
     }
   },
+  data () {
+    return {
+      editedText: null
+    }
+  },
   computed: {
     whiteSpaces () {
       return this.data.text.substring(0, 45).includes(' ')
@@ -23,7 +28,9 @@ export default {
   },
   created () {
     if (this.data.text.length > 120 && this.summarize) {
-      this.data.text = this.data.text.substring(0, 120) + '...'
+      this.editedText = this.data.text.substring(0, 120) + '...'
+    } else {
+      this.editedText = this.data.text
     }
   }
 }
@@ -39,9 +46,9 @@ export default {
     <div class="card">
       <div class="card__content">
         <p class="card__text" :class="{'card__text--break-all': !whiteSpaces}">
-          {{ data.text }}
+          {{ editedText }}
         </p>
-        <button-text v-if="detailLink" :to="'/' + data.shortId" class="card__show-detail">
+        <button-text v-if="detailLink" :to="'/' + data.id" class="card__show-detail">
           Zobrazit detail
         </button-text>
       </div>

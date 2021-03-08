@@ -1,32 +1,27 @@
 <script>
+import data from '@/assets/data.json'
+
 export default {
-  async fetch () {
-    try {
-      await fetch(this.apiBaseUrl + this.apiGetThanks).then(res => res.json()).then((res) => {
-        this.thanksArray = this.thanksArray.concat(res.data.results)
-        if (!res.data._last && res.data._next) {
-          this.apiGetThanks = res.data._next
-        } else {
-          this.lastThanks = true
-        }
-      })
-    } catch (error) {
-      this.error = 'Chyba na naší straně, nebo špatné připojení k internetu.'
-    }
-  },
-  fetchDelay: 0,
-  fetchOnServer: false,
   asyncData ({ store }) {
     store.commit('setNewMainTitle', 'Poděkuj a šiř pozitivní náladu')
   },
   data () {
     return {
-      title: null,
-      thanksArray: [],
-      error: null,
-      apiBaseUrl: 'https://api.diky2020.cz',
-      apiGetThanks: '/thanks/',
-      lastThanks: null
+      showModal: false
+    }
+  },
+  computed: {
+    thanksArray () {
+      return data
+    }
+  },
+  mounted () {
+    this.showModal = !window.localStorage.getItem('modalShown')
+  },
+  methods: {
+    closeModal () {
+      window.localStorage.setItem('modalShown', true)
+      this.showModal = false
     }
   }
 }
@@ -34,7 +29,6 @@ export default {
 
 <template>
   <div class="container">
-    <loading-bar v-show="$fetchState.pending" />
     <div class="thanks__container">
       <thanks-card v-for="thanks in thanksArray.slice(0, 4)" :key="thanks.id" :data="thanks" class="thanks__item" />
     </div>
@@ -43,15 +37,9 @@ export default {
       <thanks-card v-for="thanks in thanksArray.slice(4)" :key="thanks.id" :data="thanks" class="thanks__item" />
     </div>
     <div class="thanks__end">
-      <div v-if="lastThanks">
-        <span class="thanks__end-text">Žádná další poděkování.</span>
-        <call-to-action />
-      </div>
-      <form-button v-show="thanksArray.length > 4" v-else type="primary-outline" @click.native="$fetch">
-        Další poděkování
-      </form-button>
+      <span class="thanks__end-text">Žádná další poděkování.</span>
     </div>
-    <error-msg v-if="error" :error="error" />
+    <reference-modal :show="showModal" @close="closeModal" />
   </div>
 </template>
 

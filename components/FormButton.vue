@@ -81,6 +81,12 @@ export default {
     background-color: $orange-dark;
   }
 
+  &:disabled {
+    background-color: $orange-dark;
+    color: $gray;
+    cursor: default;
+  }
+
   &--uppercase {
     text-transform: uppercase;
   }

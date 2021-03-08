@@ -1,30 +1,20 @@
 <script>
+import data from '@/assets/data.json'
+
 export default {
-  async fetch () {
-    try {
-      await fetch('https://api.diky2020.cz/thanks/' + this.shortId).then(res => res.json()).then((res) => {
-        if (res.status === 'ERR') {
-          this.error = 'Omlouváme se, ale tato děkovací kartička pravděpodobně neexistuje'
-        } else if (res.status === 'OK') {
-          this.thanks = res.data
-        }
-      })
-    } catch (err) {
-      this.error = 'Chyba na naší straně, nebo špatné připojení k internetu.'
-    }
-  },
-  fetchDelay: 0,
-  fetchOnServer: false,
   asyncData ({ store }) {
     store.commit('setNewMainTitle', 'Poděkuj a šiř pozitivní náladu')
   },
   data () {
     return {
-      error: null,
-      thanks: null,
+      id: this.$route.params.slug,
       fullUrl: null,
-      url: null,
-      shortId: this.$route.params.slug
+      url: null
+    }
+  },
+  computed: {
+    thanks () {
+      return data.filter(x => x.id === this.id)[0]
     }
   },
   mounted () {
@@ -45,7 +35,7 @@ export default {
       btn.disabled = true
       setTimeout(() => {
         btn.classList.add('button--primary-outline')
-        btn.innerHTML = `${this.url}/${this.shortId}`
+        btn.innerHTML = `${this.url}/${this.id}`
         btn.disabled = false
       }, 1000)
     }
@@ -55,23 +45,21 @@ export default {
 
 <template>
   <div class="container">
-    <loading-bar v-show="$fetchState.pending" />
-    <error-msg v-if="error" :refresh="false" :error="error" />
-    <div v-else-if="thanks">
+    <div>
       <div class="wrapper">
         <thanks-card class="thanks-card" :detail-link="false" :summarize="false" :data="thanks" />
         <img v-if="thanks.image" :src="thanks.image" alt="Obrázek přiložený k přáníčku" class="image">
       </div>
       <div class="thanks-link">
         <span class="thanks-link__text">Sdílej poděkování:</span>
-        <form-button id="copy" :uppercase="false" type="primary-outline" @click.prevent.native="copyToClipboard(fullUrl + '/' + shortId)">
-          <span class="uppercase">{{ url }}</span>/{{ shortId }}
+        <form-button id="copy" :uppercase="false" type="primary-outline" @click.prevent.native="copyToClipboard(fullUrl + '/' + id)">
+          <span class="uppercase">{{ url }}</span>/{{ id }}
         </form-button>
       </div>
       <div class="share-links">
         <ShareNetwork
           network="Facebook"
-          :url="`${fullUrl}/${shortId}`"
+          :url="`${fullUrl}/${id}`"
           title="Díky 2020"
           tag="a"
           class="share-links__item"
@@ -81,7 +69,7 @@ export default {
         </ShareNetwork>
         <ShareNetwork
           network="Twitter"
-          :url="`${fullUrl}/${shortId}`"
+          :url="`${fullUrl}/${id}`"
           title="Díky 2020"
           class="share-links__item"
           @click.prevent.native=""
@@ -90,7 +78,7 @@ export default {
         </ShareNetwork>
         <ShareNetwork
           network="SMS"
-          :url="`${fullUrl}/${shortId}`"
+          :url="`${fullUrl}/${id}`"
           title="Díky 2020"
           class="share-links__item"
           @click.prevent.native=""
@@ -99,7 +87,7 @@ export default {
         </ShareNetwork>
         <ShareNetwork
           network="Email"
-          :url="`${fullUrl}/${shortId}`"
+          :url="`${fullUrl}/${id}`"
           title="Díky 2020"
           class="share-links__item"
           @click.prevent.native=""
@@ -131,6 +119,8 @@ export default {
   @include lg {
     width: 28%;
     flex-basis: 28%;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 
   @include sm {

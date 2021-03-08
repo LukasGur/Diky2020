@@ -1,0 +1,77 @@
+[
+  {
+    "id": "ffd5ze",
+    "name": "Petr",
+    "addressee": "Pusince",
+    "text": "Lásko, chci ti poděkovat za celý tok 2020. Jo a taky se omluvit za ten poslední týden, že jsem tě podvedl. Krásné Vánoce a příští rok už je budeme slavit spolu, ano?",
+    "donation": {
+      "amount": 20,
+      "target": "samoživitelům"
+    },
+    "image": "https://i.picsum.photos/id/797/400/300.jpg?hmac=ny5n_XNZnKSiXqP0pFQUJeySS-LmzaMQieNb4OBCoPg"
+  },
+  {
+    "id": "fen3eo",
+    "name": "Petr",
+    "addressee": "Radimovi",
+    "text": "Společně jsme zvládli fakt velký věci a já ti za to děkuji.",
+    "donation": {
+      "amount": 200,
+      "target": "seniorům"
+    },
+    "image": "https://i.picsum.photos/id/875/400/300.jpg?hmac=75U_unLuIsph0ewfL5QZehxImYbct2HCZYuMRtd0QHo"
+  },
+  {
+    "id": "cio8sd",
+    "name": "Evina",
+    "addressee": "\"dezertérům\"",
+    "text": "Marťo a Ivánku, jste ti nejlepší parťáci (nejen) k práci. Jsem za vás moc ráda a přeji si v roce co nejvíc společných zážitků."
+  },
+  {
+    "id": "knd8il",
+    "name": "David",
+    "addressee": "celému týmu Donio",
+    "text": "Míšo, Martine, Evičko, Láďo, Terko, Natálko, Martine, Kubo, Tomáši, Zuzko a Lucko, díky za úžasný rok 2020, jste pro mě důvod, proč se do práce rád vracím. Přeji vám spoustu úspěchů v roce 2021.",
+    "donation": {
+      "amount": 4000,
+      "target": "samoživitelům"
+    }
+  },
+  {
+    "id": "vdf5rt",
+    "name": "Míša",
+    "addressee": "dobrovolníkům",
+    "text": "Děkuji všem dobrovolníkům, kteří se zapojili do pomoci ohroženým skupinám, kteří donášeli obědy a nákupy seniorům. Moc díky.",
+    "donation": {
+      "amount": 1000,
+      "target": "seniorům"
+    },
+    "image": "https://i.picsum.photos/id/1003/400/300.jpg?hmac=ZZl-tJjPBSVtmWTzID6Mm2yqxh373qCf69n6IACLILw"
+  },
+  {
+    "id": "ahn4ho",
+    "name": "Vojta",
+    "addressee": "Davidovi",
+    "text": "Dobrej rok Dejve!! Jsi nejlepší!"
+  },
+  {
+    "id": "dfg4rf",
+    "name": "Petr",
+    "addressee": "všem co pomohli",
+    "text": "Děkuji všem a protože nechci nikoho vynechat, tak opravdu VŠEM, VŠEM dobrým lidem! :-)",
+    "donation": {
+      "amount": 2500,
+      "target": "samoživitelům"
+    }
+  },
+  {
+    "id": "dsr8hj",
+    "name": "František",
+    "addressee": "Petrovi",
+    "text": "Brácho, díky moc, že jsi se mnou celý rok byl a pomohl mi vše v pohodě zvládnout. Jsem ti za to moc vděčný.",
+    "donation": {
+      "amount": 400,
+      "target": "samoživitelům"
+    }
+  }
+]

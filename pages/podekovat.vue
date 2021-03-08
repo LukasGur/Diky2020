@@ -98,7 +98,7 @@ export default {
         <button-text to="/pomahame" class="form__footer-item" type="orange">
           Chci pouze podpořit sbírku
         </button-text>
-        <form-button class="form__footer-item">
+        <form-button class="form__footer-item" disabled>
           <span v-if="loading">
             Nahrávání...
           </span>
