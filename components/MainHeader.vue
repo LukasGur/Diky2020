@@ -206,14 +206,15 @@ export default {
   font-weight: bold;
   line-height: 1.4em;
 
-  @include sm {
-    font-size: 0.95rem;
+  @include md {
+    margin-top: 0.5rem;
+    font-size: 1rem;
     letter-spacing: 2px;
   }
 
-  @include xs {
-    font-size: 0.8rem;
-    letter-spacing: 2px;
+  @include sm {
+    display: flex;
+    flex-direction: column;
   }
 
   span {
