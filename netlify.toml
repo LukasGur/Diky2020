@@ -1,0 +1,36 @@
+[build]
+publish = "dist"
+command = "npm run generate"
+
+[context.production.environment]
+NUXT_VERSION = "2.14.6"
+NUXT_ENV = "production"
+NUXT_ENABLEGITINFO = "true"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3000000"
+    X-Frame-Options = "deny"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer"
+    Strict-Transport-Security = '''
+      max-age=31536000;
+      includeSubDomains
+    '''
+    Permissions-Policy = '''
+      accelerometer=(),
+      autoplay=(),
+      camera=(),
+      encrypted-media=(),
+      fullscreen=(),
+      geolocation=(),
+      gyroscope=(),
+      magnetometer=(),
+      microphone=(),
+      midi=(),
+      payment=(),
+      picture-in-picture=(),
+      usb=()
+    '''
