@@ -6,15 +6,9 @@ export default {
   fetchOnServer: false,
   data () {
     return {
-      totalDonated: '126 957',
+      totalDonated: new Intl.NumberFormat('cs-CZ').format(476748),
       mainTitle: null,
-      newYearDate: 1609455599999,
-      error: null
-    }
-  },
-  computed: {
-    totalThanks () {
-      return new Intl.NumberFormat('cs-CZ').format(data.length)
+      totalThanks: new Intl.NumberFormat('cs-CZ').format(data.length + 457)
     }
   },
   watch: {
@@ -59,7 +53,6 @@ export default {
         </div>
       </div>
     </div>
-    <error-msg v-if="error" :error="error" />
     <div class="container wrapper header__info">
       <div>Sdíleno <span>{{ totalThanks }} poděkování</span></div>
       <div>Darováno <span>{{ totalDonated }} Kč</span></div>

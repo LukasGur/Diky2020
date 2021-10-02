@@ -17,7 +17,7 @@ export default {
       <div class="copyright">
         <span class="copyright__icon">&copy;</span> {{ year }} Diky2020.cz
       </div>
-      <a href="https://noltio.com/" class="noltio__link">
+      <a href="https://github.com/LukasGur" class="noltio__link">
         Vyvinulo
         <img class="notlio__logo" width="379px" height="377px" src="/noltio-logo.png" alt="Logo firmy Noltio, s.r.o.">
       </a>
