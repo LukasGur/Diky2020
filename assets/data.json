@@ -7,7 +7,8 @@
     "donation": {
       "amount": 400,
       "target": "seniorům"
-    }
+    },
+    "image": "https://i.picsum.photos/id/689/500/300.jpg?hmac=OH0jqX6NJ4qQEmNplbhuu1hSC0sLW6E5LoOZXfwEXgU"
   },
   {
     "id": "yzk3qe",
@@ -17,7 +18,8 @@
     "donation": {
       "amount": 10000,
       "target": "samoživitelům"
-    }
+    },
+    "image": "https://i.picsum.photos/id/670/500/300.jpg?hmac=3WzX1mhcZMQAXIiDvr0Vp1cN9SvxCkSbIF7-bYETgrs"
   },
   {
     "id": "ref9es",
@@ -27,13 +29,15 @@
     "donation": {
       "amount": 2000,
       "target": "samoživitelům"
-    }
+    },
+    "image": "https://i.picsum.photos/id/129/500/300.jpg?hmac=Yaed03DKLrJ9CP5p93SABQb2EdZKMti6ugIJuOlXLXQ"
   },
   {
     "id": "wen9oz",
     "name": "Luboš",
     "addressee": "Mámě",
-    "text": "Nový rok je za rohem a i když tento nebyl pro nás nejideálnější, jsem moc rád za to, že při mně pořád stojíš. Děkuji Mami."
+    "text": "Nový rok je za rohem a i když tento nebyl pro nás nejideálnější, jsem moc rád za to, že při mně pořád stojíš. Děkuji Mami.",
+    "image": "https://i.picsum.photos/id/200/500/300.jpg?hmac=OFNvQqpTLM_GNrwAtOeHiESupegt8rDSlJCM1Ugrcq8"
   },
   {
     "id": "ffd5ze",
